@@ -1,0 +1,85 @@
+{
+  "resolvedId": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/src/modules/variables.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "export default function variables() {\r\n  var declare; // declare variable\r\n  declare = undefined; // assign value (undefined (automatic): For variables that have not yet been defined.)\r\n\r\n  var define = null; // declare & assign = define (null (object): Explicitly set a variable with no value.)\r\n\r\n  console.log(declare + 3, `Our data-type is ${undefined}`, define + 3, `Our data-type is ${null}`);\r\n\r\n  define = undefined; // Re-assign with new value\r\n\r\n  /* SCOPING example */\r\n\r\n  var scopeLess = undefined;\r\n  let globalScope = undefined; // global scope variable, cannot be redefined in the same scope.\r\n  const blockScope = undefined; // let and const are not hoisted, so they cannot be used before they are declared.\r\n\r\n  console.log(scopeLess, globalScope, blockScope); // Retrieves (return) value\r\n\r\n  if (true) {\r\n    globalScope = null;\r\n    console.log(`Global variable inside: ${globalScope}`); // returns null\r\n\r\n    const blockScope = null;\r\n    console.log(`Can be redefine inside block, but cannot be access from global scope: ${blockScope}`); // returns null\r\n\r\n    /* var define = null;\r\n     * console.log(`Don NOT use var: ${scopeLess}`);\r\n     * returns error */\r\n\r\n    if (true) {\r\n      console.log(`Inside nested code block: ${blockScope}`);\r\n\r\n      let localScope = undefined;\r\n      console.log(localScope); // returns undefined\r\n    }\r\n  }\r\n\r\n  console.log(`Global scope and block scope outside: ${globalScope} ${blockScope}`); // returns null and undefined\r\n\r\n  // console.log(localScope); // returns error\r\n}\r\n",
+      "start": 1700402307001,
+      "end": 1700402307001
+    },
+    {
+      "name": "vite:css",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:client-inject",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-analysis",
+      "result": "export default function variables() {\r\n  var declare; // declare variable\r\n  declare = undefined; // assign value (undefined (automatic): For variables that have not yet been defined.)\r\n\r\n  var define = null; // declare & assign = define (null (object): Explicitly set a variable with no value.)\r\n\r\n  console.log(declare + 3, `Our data-type is ${undefined}`, define + 3, `Our data-type is ${null}`);\r\n\r\n  define = undefined; // Re-assign with new value\r\n\r\n  /* SCOPING example */\r\n\r\n  var scopeLess = undefined;\r\n  let globalScope = undefined; // global scope variable, cannot be redefined in the same scope.\r\n  const blockScope = undefined; // let and const are not hoisted, so they cannot be used before they are declared.\r\n\r\n  console.log(scopeLess, globalScope, blockScope); // Retrieves (return) value\r\n\r\n  if (true) {\r\n    globalScope = null;\r\n    console.log(`Global variable inside: ${globalScope}`); // returns null\r\n\r\n    const blockScope = null;\r\n    console.log(`Can be redefine inside block, but cannot be access from global scope: ${blockScope}`); // returns null\r\n\r\n    /* var define = null;\r\n     * console.log(`Don NOT use var: ${scopeLess}`);\r\n     * returns error */\r\n\r\n    if (true) {\r\n      console.log(`Inside nested code block: ${blockScope}`);\r\n\r\n      let localScope = undefined;\r\n      console.log(localScope); // returns undefined\r\n    }\r\n  }\r\n\r\n  console.log(`Global scope and block scope outside: ${globalScope} ${blockScope}`); // returns null and undefined\r\n\r\n  // console.log(localScope); // returns error\r\n}\r\n",
+      "start": 1700402307001,
+      "end": 1700402307001,
+      "order": "normal",
+      "sourcemaps": null
+    }
+  ]
+}

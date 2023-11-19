@@ -1,0 +1,325 @@
+{
+  "root": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide",
+  "modules": [
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/index.html",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        }
+      ],
+      "virtual": true,
+      "totalTime": 0,
+      "invokeCount": 0,
+      "sourceSize": 0,
+      "distSize": 0
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/index.html?html-proxy&direct&index=0.css",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "__load__",
+          "transform": 0
+        },
+        {
+          "name": "vite:css",
+          "transform": 16
+        },
+        {
+          "name": "vite:css",
+          "transform": 11
+        },
+        {
+          "name": "vite:css",
+          "transform": 13
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        }
+      ],
+      "virtual": false,
+      "totalTime": 40,
+      "invokeCount": 1,
+      "sourceSize": 1273,
+      "distSize": 0
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/node_modules/.pnpm/vite@5.0.0_sass@1.69.5/node_modules/vite/dist/client/client.mjs",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "__load__",
+          "transform": 0
+        },
+        {
+          "name": "vite:asset-import-meta-url",
+          "transform": 19
+        },
+        {
+          "name": "vite:client-inject",
+          "transform": 0
+        },
+        {
+          "name": "vite:import-analysis",
+          "transform": 1
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        },
+        {
+          "name": "alias",
+          "resolveId": 0
+        },
+        {
+          "name": "alias",
+          "resolveId": 0
+        },
+        {
+          "name": "alias",
+          "resolveId": 0
+        }
+      ],
+      "virtual": false,
+      "totalTime": 20,
+      "invokeCount": 1,
+      "sourceSize": 26175,
+      "distSize": 26172
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/node_modules/.pnpm/vite@5.0.0_sass@1.69.5/node_modules/vite/dist/client/env.mjs",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "__load__",
+          "transform": 0
+        },
+        {
+          "name": "vite:client-inject",
+          "transform": 0
+        },
+        {
+          "name": "vite:import-analysis",
+          "transform": 0
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        },
+        {
+          "name": "alias",
+          "resolveId": 0
+        }
+      ],
+      "virtual": false,
+      "totalTime": 0,
+      "invokeCount": 1,
+      "sourceSize": 776,
+      "distSize": 767
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/src/main.scss",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "__load__",
+          "transform": 0
+        },
+        {
+          "name": "vite:css",
+          "transform": 75
+        },
+        {
+          "name": "vite:css-post",
+          "transform": 0
+        },
+        {
+          "name": "vite:import-analysis",
+          "transform": 0
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        }
+      ],
+      "virtual": false,
+      "totalTime": 75,
+      "invokeCount": 3,
+      "sourceSize": 1449,
+      "distSize": 10100
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/src/main.ts",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 1
+        }
+      ],
+      "virtual": true,
+      "totalTime": 0,
+      "invokeCount": 1,
+      "sourceSize": 0,
+      "distSize": 0
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/src/modules/dom.js",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        }
+      ],
+      "virtual": true,
+      "totalTime": 0,
+      "invokeCount": 0,
+      "sourceSize": 0,
+      "distSize": 0
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/src/modules/dt-number.js",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "vite:resolve",
+          "resolveId": 1
+        }
+      ],
+      "virtual": true,
+      "totalTime": 0,
+      "invokeCount": 0,
+      "sourceSize": 0,
+      "distSize": 0
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/src/modules/output.js",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        }
+      ],
+      "virtual": true,
+      "totalTime": 0,
+      "invokeCount": 0,
+      "sourceSize": 0,
+      "distSize": 0
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/src/modules/variables.js",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "__load__",
+          "transform": 0
+        },
+        {
+          "name": "vite:import-analysis",
+          "transform": 0
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        },
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        }
+      ],
+      "virtual": false,
+      "totalTime": 0,
+      "invokeCount": 3,
+      "sourceSize": 1542,
+      "distSize": 1542
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/src/vite-env.d.ts",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "vite:resolve",
+          "resolveId": 0
+        }
+      ],
+      "virtual": true,
+      "totalTime": 0,
+      "invokeCount": 0,
+      "sourceSize": 0,
+      "distSize": 0
+    },
+    {
+      "id": "C:/Users/szabo/OneDrive/Dokumentumok/CodingSable/js-guide/tailwind.config.js",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "vite:resolve",
+          "resolveId": 1
+        }
+      ],
+      "virtual": true,
+      "totalTime": 0,
+      "invokeCount": 0,
+      "sourceSize": 0,
+      "distSize": 0
+    },
+    {
+      "id": "virtual:@vite-plugin-checker-runtime",
+      "deps": [],
+      "plugins": [
+        {
+          "name": "vite-plugin-checker",
+          "transform": 0
+        },
+        {
+          "name": "vite:client-inject",
+          "transform": 39
+        },
+        {
+          "name": "vite:import-analysis",
+          "transform": 2
+        },
+        {
+          "name": "vite-plugin-checker",
+          "resolveId": 0
+        },
+        {
+          "name": "vite-plugin-checker",
+          "resolveId": 0
+        },
+        {
+          "name": "vite-plugin-checker",
+          "resolveId": 0
+        }
+      ],
+      "virtual": true,
+      "totalTime": 41,
+      "invokeCount": 1,
+      "sourceSize": 231142,
+      "distSize": 223726
+    }
+  ],
+  "ssrModules": []
+}

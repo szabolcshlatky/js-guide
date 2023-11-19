@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-HU" dir="ltr" id="index">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <meta name="description" content="150-160 karakter, (fókusz)kulcsszavakkal az elején" />
+  <meta name="keywords" content="fókusz,kevésbéfontos,max10" />
+  <meta name="author" content="Hlatky Szabolcs" />
+  <meta name="creator" content="Coding Sable" />
+  <meta name="publisher" content="Ictys" />
+  <meta name="generator" content="Visual Studio Code" />
+  <meta name="distribution" content="global" />
+  <meta name="revised" content="Ictys, 2023/01/01" />
+  <meta name="revisit-after" content="366 days" />
+  <meta name="rating" content="general" />
+  <meta name="language" content="Hunglish" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="target" content="all" />
+  <meta name="audience" content="all" />
+  <!-- <meta name="theme-color" content="#000000" /> -->
+
+  <title></title>
+
+  <link rel="icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon.ico" />
+
+  <style>
+    .logo img,
+    .©貂 img {
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    .logo button,
+    .©貂 button {
+      display: inline-block;
+      min-width: 44px;
+      min-height: 44px;
+      border: none;
+      font-size: clamp(1rem, 1.25vw, 1.25rem);
+      line-height: 1.5;
+      background: none;
+      cursor: pointer;
+    }
+
+    .logo a:link,
+    .©貂 a:visited {
+      color: (internal value);
+      text-decoration: .5px dashed underline;
+      cursor: pointer;
+    }
+
+    .logo a:link:active,
+    .©貂 a:visited:active {
+      color: (internal value);
+    }
+
+    .logo {
+      position: fixed;
+      top: 1%;
+      left: 1%;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .logo a {
+      display: inline-block;
+      transition: 0.5s;
+      opacity: 0.5;
+    }
+
+    .logo a:hover {
+      opacity: 1;
+    }
+
+    .logo button {
+      transition: 0.5s;
+      opacity: 0.5;
+    }
+
+    .logo button:hover {
+      opacity: 1;
+    }
+
+    .©貂 {
+      position: fixed;
+      bottom: 1%;
+      right: 1%;
+      z-index: 9999;
+      font-style: normal;
+      opacity: 0.5;
+      transition: 1s;
+    }
+
+    .©貂:hover {
+      opacity: 1;
+      scale: 1.2;
+      transform: rotateZ(-90deg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <figure class="logo">
+    <a href="index.html" title="To the index page.">
+      <img src="/assets/images/logo.svg" alt="logo" width="64px" height="64px" />
+    </a>
+    <figcaption>
+      <button type="button" title="Skip to the main content." onclick="location.href='#main';">
+        About
+      </button>
+    </figcaption>
+  </figure>
+
+  <header>
+    <h1>JavaScript Fundamentals – Part 1</h1>
+  </header>
+
+  <main id="main">
+    <article>
+      <details>
+        <summary>VAR.IABLES</summary>
+        <p>
+          In JavaScript, identifiers are case-sensitive and can contain Unicode letters, $, _, and digits (0-9), but may
+          not start with a digit. Use camelCase naming with meaningful words. Reserved keywords:
+          https://www.w3schools.com/js/js_reserved.asp
+        </p>
+        <dl>
+          <dt>HOISTING</dt>
+          <dd>In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used
+            before it has been declared.</dd>
+          <dd>Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to
+            the
+            top of the current script or the current function).</dd>
+          <dd>Variables defined with let and const are hoisted to the top of the block, but not initialized. Meaning:
+            The
+            block of code is aware of the variable, but it cannot be used until it has been declared.</dd>
+          <dd>Using a let variable before it is declared will result in a ReferenceError. The variable is in a "temporal
+            dead zone" from the start of the block until it is declared.</dd>
+          <dd>Using a const variable before it is declared, is a syntax error, so the code will simply not run.</dd>
+          <dd>JavaScript only hoists declarations, not initializations.</dd>
+          <dt>TIP:</dt>
+          <dd>Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.</dd>
+          <dd>If a developer doesn't understand hoisting, programs may contain bugs (errors).</dd>
+          <dd>To avoid bugs, always declare all variables at the beginning of every scope.</dd>
+          <dd>Since this is how JavaScript interprets the code, it is always a good rule.</dd>
+          <dd>JavaScript in strict mode does not allow variables to be used if they are not declared.</dd>
+        </dl>
+        <dl>
+          <dt>SCOPING</dt>
+          <dd>In JavaScript, objects and functions are also variables.</dd>
+          <dd>The lifetime of a JavaScript variable starts when it is declared.</dd>
+          <dd>Scope determines the accessibility of variables, objects, and functions from different parts of the code.
+          </dd>
+          <dt>Block Scope</dt>
+          <dd>Variables (let, const) declared inside a { } block cannot be accessed from outside the block.</dd>
+          <dd>Variables declared with the var keyword can NOT have block scope.</dd>
+          <dd>Variables (var) declared inside a { } block can be accessed from outside the block.</dd>
+          <dt>Local / Function Scope</dt>
+          <dd>Variables declared within a JavaScript function, become LOCAL to the function. They can only be accessed
+            from within the function.</dd>
+          <dd>Since local variables are only recognized inside their functions, variables with the same name can be used
+            in different functions.</dd>
+          <dd>Local variables are created when a function starts, and deleted when the function is completed.</dd>
+          <dd>JavaScript has function scope: Each function creates a new scope.</dd>
+          <dd>Variables defined inside a function are not accessible (visible) from outside the function.</dd>
+          <dd>Variables declared with var, let and const are quite similar when declared inside a function. They all
+            have
+            Function Scope.</dd>
+          <dd>Function (local) variables are deleted when the function is completed.</dd>
+          <dd>Function arguments (parameters) work as local variables inside functions.</dd>
+          <dt>Global Scope</dt>
+          <dd>A variable declared outside a function, becomes GLOBAL. A global variable has Global Scope: All scripts
+            and
+            functions on a web page can access it.</dd>
+          <dd>Variables declared with var, let and const are quite similar when declared outside a block. They all have
+            Global Scope.</dd>
+          <dd>If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL
+            variable.</dd>
+          <dd>You can declare a global variable, even if the value is assigned inside a function.</dd>
+          <dd>In "Strict Mode", undeclared variables are not automatically global.</dd>
+          <dd>With JavaScript, the global scope is the JavaScript environment.
+            <ul>
+              <li>In HTML, the global scope is the window object.</li>
+              <li>Global variables defined with the var keyword belong to the window object.</li>
+              <li>Global variables defined with the let keyword do not belong to the window object.</li>
+            </ul>
+          </dd>
+          <dt>WARNING:</dt>
+          <dd>Do NOT create global variables unless you intend to.
+            <ul>
+              <li>Your global variables (or functions) can overwrite window variables (or functions).</li>
+              <li>Any function, including the window object, can overwrite your global variables and functions.</li>
+              <li>In a web browser, global variables are deleted when you close the browser window (or tab).</li>
+            </ul>
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Data-typeof</summary>
+        <dt>Primitive types</dt>
+        <dd>All primitive types define immutable values (that is, values which can't be changed). For example, strings
+          are immutable. We refer to values of these types as "primitive values".</dd>
+        <dd>'new' constructor keyword: This way we can see the primitive values' methods and properties too.</dd>
+        <dd>Stack:
+          <ul>
+            <li>Primitive values and references</li>
+            <li>Size is known at compile time</li>
+            <li>Allocates a fixed amount of memory</li>
+          </ul>
+        </dd>
+        <dt>Reference types - Everything in JS is an Object.</dt>
+        <dd>In computer science, an object is a value in memory which is possibly referenced by an identifier.</dd>
+        <dd>Heap:
+          <ul>
+            <li>Objects and functions</li>
+            <li>Size is known at run time</li>
+            <li>No limit per object</li>
+          </ul>
+        </dd>
+      </details>
+    </article>
+
+    <aside>
+      <h2>Learning HTML & CSS .. JS & TS</h2>
+      <p class="first">
+        You can learn JavaScript without HTML and CSS, but for DOM manipulation
+        it's useful to have some basic ideas of HTML & CSS. You can learn more
+        about it
+        <a href="https://www.udemy.com/user/jonasschmedtmann/">on Udemy</a>.
+      </p>
+
+      <h3>Another heading</h3>
+      <p class="second">
+        JavaScript is fun, but so is HTML & CSS!
+      </p>
+
+      <img id="course-image" src="/assets/images/placeholder.jpg" alt="" />
+
+      <form id="your-name">
+        <h2>Your name here</h2>
+        <p class="first">Please fill in this form :)</p>
+
+        <input type="text" placeholder="Your name" />
+        <button type="button">OK!</button>
+      </form>
+    </aside>
+  </main>
+
+  <figure class="©貂">
+    <button type="button" title="Go to page top" aria-label="Bookmark" onclick="location.href='#top';">
+      <picture>
+        <!-- <source sizes="" srcset="" type="image/" media="(min-width: )" /> -->
+        <img src="/assets/images/copyright.png" alt="Copyright to Coding Sable" width="32px" height="32px" />
+      </picture>
+    </button>
+  </figure>
+
+  <script type="module" src="/src/main.ts" defer></script>
+
+  <noscript>The web-browser does NOT support JavaScript or it is switched off!</noscript>
+</body>
+
+</html>
