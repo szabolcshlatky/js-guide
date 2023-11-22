@@ -8,13 +8,14 @@ export default function variables() {
 
   define = undefined; // Re-assign with new value
 
+  console.log(`Chaining assignments: ${chaining} ${assignments}`);
+
   /* SCOPING example */
 
-  var scopeLess = undefined;
   let globalScope = undefined; // global scope variable, cannot be redefined in the same scope.
   const blockScope = undefined; // let and const are not hoisted, so they cannot be used before they are declared.
 
-  console.log(scopeLess, globalScope, blockScope); // Retrieves (return) value
+  console.log(define, globalScope, blockScope); // Retrieves (return) value
 
   if (true) {
     globalScope = null;
