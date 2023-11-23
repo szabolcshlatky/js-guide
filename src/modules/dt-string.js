@@ -57,4 +57,10 @@ export default function string() {
       .replace(`0.6`, `+36`)
       .concat(` ${email}`)};
   `);
+
+  /* Iteration */
+
+  for (const char of `for...of loop `) {
+    console.log(`char (is a variable for the actual element or character from the iteration) = ${char} `);
+  }
 }

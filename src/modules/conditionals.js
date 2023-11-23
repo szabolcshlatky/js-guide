@@ -10,7 +10,7 @@ export default function conditionals() {
     console.log(`You can't drink alcohol & marry yet!`);
   }
 
-  /* Ternary operator */
+  /* Ternary operator expressions */
   age <= 18 ? console.log(`You can't drive yet!`) : console.log(`You can drive!`);
 
   /* Logical operators */
@@ -31,7 +31,7 @@ export default function conditionals() {
       That password is not strong enough! But at least is better:
       than null (${password ?? null})
       or undefined (${undefined ?? password})!
-      ?? = Cannot be used with || or && operators (only if they in () )!
+      ?? = Cannot be used with || or && operators (only if they are in () )!
     `);
   }
 

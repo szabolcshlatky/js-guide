@@ -33,6 +33,11 @@ export default function boolean() {
     Boolean(digitString) = ${Boolean(digitString)};
     Boolean(null) = ${Boolean(null)};
     Boolean(undefined) = ${Boolean(undefined)};
+    Boolean(NaN) = ${Boolean(NaN)};
+    Boolean(Infinity) = ${Boolean(Infinity)};
+    Boolean(-Infinity) = ${Boolean(-Infinity)};
+    Boolean({}) = ${Boolean({})};
+    Boolean([]) = ${Boolean([])};
   `);
 
   /* Comparison operators */

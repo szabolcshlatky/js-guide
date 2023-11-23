@@ -124,7 +124,7 @@
   </figure>
 
   <header>
-    <h1>JavaScript Fundamentals – Part 1</h1>
+    <h1>JavaScript Fundamentals – Part 1 & 2</h1>
   </header>
 
   <main id="main">
@@ -230,6 +230,29 @@
             <li>No limit per object</li>
           </ul>
         </dd>
+      </details>
+
+      <details>
+        <summary>Functions</summary>
+        <p>In JavaScript every function is an object. An object is a collection of key:value pairs. If a value is a
+          primitive (number, string, boolean), or another object, the value is considered a property. If a value is a
+          function, it is called a 'method'.</p>
+        <p>Within the scope of an object, a function is referred to as a method of that object. It is invoked from the
+          object namespace 'MyObj.theMethod()'. Since we said that a function is an object, a function within a function
+          can be considered a method of that function.</p>
+        <p>You could say things like “I am going to use the save method of my object.” And "This save method accepts a
+          function as a parameter.” But you generally wouldn't say that a function accepts a method as a parameter.</p>
+        <p>We invoke method with '.', we invoke function like this: functionName();</p>
+
+        <dl>
+          <dt>Parameters are properties of a function.</dt>
+          <dd>Parameters (if any) define the method signature.</dd>
+          <dt>Arguments are properties of a particular call to a function.</dt>
+          <dd>Arguments are values passed into a function.</dd>
+        </dl>
+
+        <p>When you define a function, the variables that represent the values that will be passed to it for processing
+          are called parameters. However, when you use a function, the value you pass to it is called an argument.</p>
       </details>
     </article>
 

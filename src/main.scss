@@ -35,6 +35,12 @@
       article {
         width: 60%;
 
+        details,
+        p,
+        dl {
+          margin: 1em 0;
+        }
+
         ul li {
           list-style-type: disc;
         }

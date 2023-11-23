@@ -10,8 +10,8 @@ import './main.scss';
 // import symbol from './modules/dt-symbol.js';
 // import date from './modules/dt-date.js';
 // import conditionals from './modules/conditionals.js';
-import loops from './modules/loops.js';
-// import function from './modules/dt-function.js';
+// import loops from './modules/loops.js';
+import functions from './modules/dt-function.js';
 // import array from './modules/dt-array.js'; // import set from './modules/dt-weak-set.js';
 // import object from './modules/dt-object.js'; // import map from './modules/dt-weak-map.js';
 // import oop from './modules/oop.js';
@@ -29,8 +29,8 @@ import loops from './modules/loops.js';
 // symbol();
 // date();
 // conditionals();
-loops();
-
+// loops();
+functions();
 // dom();
 
 // fundamentals_1();

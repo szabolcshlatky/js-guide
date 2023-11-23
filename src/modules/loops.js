@@ -1,21 +1,19 @@
 export default function loops() {
   /* While loop */
-  let While = `while loop`;
   let i = 0;
 
-  while (i < While.length) {
-    console.log(While[i]);
+  while (i <= 5) {
+    console.log(`Index of a while loop`, i);
     i++;
   }
 
-  let doWhile = ` do while loop`;
+  /* do while loop */
   i = 0;
 
-  /* do while loop */
   do {
-    console.log(`A do while loop is good, when I want to run a code at least once...`, doWhile[i]);
+    console.log(`A do while loop is good, when I want to run a code at least once... (index = ${i})`);
     i++;
-  } while (i < doWhile.length);
+  } while (i === 5);
 
   /* For loop */
   let For = [`begin`, `condition`, `step`];
@@ -24,8 +22,10 @@ export default function loops() {
     console.log(For[i]);
   }
 
-  for (let i = 0, b = 3; i < 5; i++, b += 10) {
-    console.log(i, b);
+  let phoneNumber = String(36703340741);
+
+  for (let i = 0, b = `+3`; i < phoneNumber.length; i++, b += phoneNumber[i]) {
+    console.log(phoneNumber[i], b);
   }
 
   for (;;) {

@@ -174,6 +174,9 @@ export default function number() {
     age /= 2 (age = age / 2) = ${(age /= 2)};
   `);
 
+  /* Type coercion */
+  console.log('9' - '5', '19' - '13' + '17', '19' - '13' + 17, '123' < 57, 5 ** 6 + '4' - (9 / 4) * 2);
+
   /* BigInt */
   console.log(BigInt.prototype);
   const bigInt = 9007199254740991n;
