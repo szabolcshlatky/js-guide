@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function symbol() {
   console.log(Symbol.prototype);
   let nick, nickname;

@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function boolean() {
   /* Boolean */
   console.log(Boolean.prototype);

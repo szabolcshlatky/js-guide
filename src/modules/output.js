@@ -1,6 +1,9 @@
+`use strict`;
+
 export default function output() {
   alert(`Hello World`); // Alert box
   prompt(`Alert box with text input field. Which returns with a string`);
+  confirm(`Alert box text with 'OK' and 'cancel' buttons. This way returns true or false.`);
   scrollTo(0, 0); // Scrolling the window on x and y coordinates
   outerWidth; // Returns the width in pixels.
 

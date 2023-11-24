@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function string() {
   /* String */
   console.log(String.prototype);

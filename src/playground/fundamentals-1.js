@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function fundamentals_1() {
   /* Values and Variables */
   const country = `Hungary`;
@@ -219,4 +221,21 @@ export default function fundamentals_1() {
   bill = 430;
   tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
   console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+
+  /* Functions */
+
+  function describeCountry(country, population, capitalCity) {
+    return `${country} has ${population} million people and its capital city is ${capitalCity}`;
+  }
+
+  const hungary = describeCountry(country, population, `Budapest`);
+  console.log(hungary);
+
+  const finland = describeCountry(`Finland`, 6, `Helsinki`);
+  console.log(finland);
+
+  const portugal = (`Portugal`, 10, `Lisbon`);
+  console.log(portugal);
+
+  /* Function Declarations vs. Expressions */
 }

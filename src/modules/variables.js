@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function variables() {
   var declare; // declare variable
   declare = undefined; // assign value (undefined (automatic): For variables that have not yet been defined.)

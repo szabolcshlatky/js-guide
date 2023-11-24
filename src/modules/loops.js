@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function loops() {
   /* While loop */
   let i = 0;

@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function dom() {
   console.log(document.URL);
   console.log(document.location);

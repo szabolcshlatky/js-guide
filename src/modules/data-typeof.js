@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function datatypeof() {
   const automatic = undefined;
   const nullObject = null;

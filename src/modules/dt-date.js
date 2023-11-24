@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function date() {
   /* Date object */
   console.log(Date.prototype);

@@ -1,3 +1,5 @@
+`use strict`;
+
 export default function number() {
   /* Numbers & Floats */
   console.log(Number.prototype);
