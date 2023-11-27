@@ -254,6 +254,37 @@
         <p>When you define a function, the variables that represent the values that will be passed to it for processing
           are called parameters. However, when you use a function, the value you pass to it is called an argument.</p>
       </details>
+
+      <details>
+        <summary>Array Buffer</summary>
+        <p>
+          In JavaScript, an ArrayBuffer is an object that represents a generic, fixed-length raw binary data buffer. It
+          is part of the TypedArray and DataView interfaces, which provide a way to work with binary data in a more
+          controlled manner than the traditional JavaScript arrays.
+        </p>
+
+        <dl>
+          <dt>Type Conversion:</dt>
+          <dd>ArrayBuffer itself is not meant for direct manipulation, but rather as a low-level foundation for other
+            more specific views. You can use TypedArrays or DataViews to interact with the data in the buffer. For
+            example:</dd>
+          <dt>Use case #1 - Low-Level Data Manipulation</dt>
+          <dd>ArrayBuffer is useful when you need to work with binary data directly, like parsing or manipulating
+            network protocols, file formats, or any other binary data.</dd>
+          <dt>Use case #2 - Data Transfer:</dt>
+          <dd>It's often used in APIs that involve transferring binary data, such as the Fetch API, WebSockets, or
+            WebGL.</dd>
+          <dt>Use case #3 - Efficient Memory Handling:</dt>
+          <dd>ArrayBuffer allows for efficient memory handling, as it represents a fixed-size buffer and can be used for
+            efficient data manipulation without the overhead of JavaScript arrays.</dd>
+          <dt>Use case #4 - Interoperability:</dt>
+          <dd>It's useful when dealing with other web technologies or external libraries that work with binary data,
+            providing a common interface for data exchange.</dd>
+        </dl>
+
+        <p>In summary, ArrayBuffer provides a way to work with binary data in a more controlled and efficient manner in
+          JavaScript, allowing for low-level manipulation and interoperability with other technologies.</p>
+      </details>
     </article>
 
     <aside>
