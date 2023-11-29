@@ -285,6 +285,28 @@
         <p>In summary, ArrayBuffer provides a way to work with binary data in a more controlled and efficient manner in
           JavaScript, allowing for low-level manipulation and interoperability with other technologies.</p>
       </details>
+
+      <details>
+        <summary>Garbage collection</summary>
+
+        <p>Garbage collection is the process by which a programming language automatically reclaims memory that is no
+          longer in use by the program. In JavaScript, memory is managed automatically by the JavaScript engine. When
+          objects are created, they are allocated memory. When they are no longer reachable or referenced, they become
+          eligible for garbage collection.</p>
+
+        <dl>
+          <dt>The most common algorithm used for garbage collection in JavaScript is the Mark and Sweep algorithm.
+            Here's a simplified explanation of how it works:</dt>
+          <dd>Mark: The garbage collector starts from the root of the application (global object or objects referenced
+            from it) and marks all the objects it can reach.</dd>
+          <dd>Sweep: It then sweeps through the memory, freeing up the space occupied by objects that were not marked in
+            the previous step, as they are considered unreachable and can be safely removed.</dd>
+        </dl>
+
+        <p>JavaScript engines, like V8 in Chrome or SpiderMonkey in Firefox, use sophisticated algorithms and
+          optimizations to perform garbage collection efficiently without causing noticeable pauses in the application.
+        </p>
+      </details>
     </article>
 
     <aside>

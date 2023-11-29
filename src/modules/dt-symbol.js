@@ -1,15 +1,25 @@
 `use strict`;
 
 export default function symbol() {
-  console.log(Symbol.prototype);
+  /* Symbol */
   let nick, nickname;
   nick = nickname = Symbol(`©貂`);
   let name = Symbol(`©貂`);
 
-  console.log(nick, nickname, name);
-
-  console.log(`With variable chaining (nick == nickname) =`, nick == nickname);
-  console.log(`With variable chaining (nick === nickname) =`, nick === nickname);
-  console.log(`Without variable chaining (nick != name) =`, nick != name);
-  console.log(`Without variable chaining (nick !== name) =`, nick !== name);
+  console.log(
+    `let nick, nickname = Symbol(©貂):
+    nick = nickname = Symbol(©貂): \n`,
+    nick,
+    nickname,
+    `\n\ let name = Symbol(©貂): \n`,
+    name,
+    `\n\ With variable chaining (nick == nickname): \n`,
+    nick == nickname,
+    `\n\ With variable chaining (nick === nickname): \n`,
+    nick === nickname,
+    `\n\ Without variable chaining (nick != name): \n`,
+    nick != name,
+    `\n\ Without variable chaining (nick !== name): \n`,
+    nick !== name,
+  );
 }

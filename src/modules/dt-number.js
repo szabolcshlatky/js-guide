@@ -2,197 +2,424 @@
 
 export default function number() {
   /* Numbers & Floats */
-  console.log(Number.prototype);
-  let age = 30;
-  let yearOfBirth = new Number(1993);
-  let digitString = `0`;
-  let phoneNumber = `36703340741`;
-  let stringNumber = `zero`;
-
-  console.log(`
-    age = ${age};
-    yearOfBirth = ${yearOfBirth};
-    digitString = ${digitString};
-    phoneNumber = ${phoneNumber};
-    stringNumber = ${stringNumber};
-  `);
+  let yearOfBirth = 1993;
+  let age = 30.5;
+  let minus = -36703340741;
+  let minusZero = -0;
+  let plusZero = +0;
 
   /* E.xponential constant */
-  let billion = 1e9;
-  let millions = 4.5e6;
+  let million = 1e6;
+  let threeBillion = 3e9;
   let milli = 2e-3;
   let macro = 5e-6;
 
-  console.log(`
-    1 billion (literally: 1 and 9 zeroes, or 1 * 109) = ${billion};
-    4.5 millions ((same as 4_500_000), or 4.5 * 106) = ${millions};
-    milli (0.002 or 2 * 10-3) = ${milli};
-    0.000005 or 5 * 10-6 macro = ${macro};
-  `);
+  console.log(
+    `Number (let yearOfBirth = 1993): \n`,
+    yearOfBirth,
+    `\n\ Float (let age = 30.5): \n`,
+    age,
+    `\n\ Exponential constant (let million = 1e6): \n`,
+    million,
+    `\n\ Exponential constant (let threeBillion = 3e9): \n`,
+    threeBillion,
+    `\n\ Exponential constant (let milli = 2e-3): \n`,
+    milli,
+    `\n\ Exponential constant (let macro = 5e-6): \n`,
+    macro,
+  );
 
   /* Properties */
-  const EPSILON = Number.EPSILON; // Smallest interval between two representable numbers; approximately 2.2204460492503130808472633361816E-16.
+  const EPSILON = Number.EPSILON;
+  const MIN_SAFE_INTEGER = Number.MIN_SAFE_INTEGER;
+  const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER;
+  const MIN_VALUE = Number.MIN_VALUE;
+  const MAX_VALUE = Number.MAX_VALUE;
+  const NaN = Number.NaN;
+  const POSITIVE_INFINITY = Number.POSITIVE_INFINITY;
+  const NEGATIVE_INFINITY = Number.NEGATIVE_INFINITY;
 
-  const MIN_SAFE_INTEGER = Number.MIN_SAFE_INTEGER; // -9007199254740991
-  const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER; // 9007199254740991
+  console.log(
+    `Number.properties: \n`,
+    `Smallest interval between two representable numbers; approximately 2.2204460492503130808472633361816E-16 (EPSILON): \n`,
+    EPSILON,
+    `\n\ Largest representable number; approximately 1.7976931348623157E+308 (MAX_VALUE): \n`,
+    MAX_VALUE,
+    `\n\ Smallest representable number; approximately 5.0E-324 (MIN_VALUE): \n`,
+    MIN_VALUE,
+    `\n\ 9007199254740991 (MAX_SAFE_INTEGER): \n`,
+    MAX_SAFE_INTEGER,
+    `\n\ -9007199254740991 (MIN_SAFE_INTEGER): \n`,
+    MIN_SAFE_INTEGER,
+    `\n\ Special "not a number" value. (NaN): \n`,
+    NaN,
+    `\n\ Special positive infinite value; returned on overflow. (1 / 0): \n`,
+    POSITIVE_INFINITY,
+    `\n\ Special negative infinite value; returned on overflow. (1 / -0): \n`,
+    NEGATIVE_INFINITY,
+  );
 
-  const MIN_VALUE = Number.MIN_VALUE; // Smallest representable number; approximately 5.0E-324.
-  const MAX_VALUE = Number.MAX_VALUE; // Largest representable number; approximately 1.7976931348623157E+308.
-
-  const NaN = Number.NaN; // Special "not a number" value. (NaN)
-  const POSITIVE_INFINITY = Number.POSITIVE_INFINITY; // Special positive infinite value; returned on overflow. (1 / 0)
-  const NEGATIVE_INFINITY = Number.NEGATIVE_INFINITY; // Special negative infinite value; returned on overflow. (1 / -0)
-
-  /* Methods & Type conversion */
-  console.log(`
-    MIN_VALUE.valueOf() = ${MIN_VALUE.valueOf()};
-    MAX_VALUE.valueOf() = ${MAX_VALUE.valueOf()};
-    \n\
-    yearOfBirth.toLocaleString() = ${yearOfBirth.toLocaleString()};
-    (decimal)yearOfBirth.toString() = ${yearOfBirth.toString()};
-    (binary)yearOfBirth.toString(2) = ${yearOfBirth.toString(2)};
-    (hex)yearOfBirth.toString(16) = ${yearOfBirth.toString(16)};
-    (octal)yearOfBirth.toString(8) = ${yearOfBirth.toString(8)};
-    \n\
-    EPSILON.toPrecision(4) = ${EPSILON.toPrecision(4)};
-    EPSILON.toFixed(3) = ${EPSILON.toFixed(3)};
-    EPSILON.toExponential(2) = ${EPSILON.toExponential(2)};
-    \n\
-    Number.isFinite(POSITIVE_INFINITY) = ${Number.isFinite(POSITIVE_INFINITY)};
-    Number.isFinite(NEGATIVE_INFINITY) = ${Number.isFinite(NEGATIVE_INFINITY)};
-    Number.isFinite(true) = ${Number.isFinite(true)};
-    Number.isFinite(false) = ${Number.isFinite(false)};
-    Number.isFinite(NaN) = ${Number.isFinite(NaN)};
-    Number.isFinite(stringNumber) = ${Number.isFinite(stringNumber)};
-    Number.isFinite(digitString) = ${Number.isFinite(digitString)};
-    Number.isFinite(yearOfBirth) = ${Number.isFinite(yearOfBirth)};
-    Number.isFinite(age) = ${Number.isFinite(age)};
-    \n\
-    Number.isNaN(NaN) = ${Number.isNaN(NaN)};
-    Number.isNaN(stringNumber) = ${Number.isNaN(stringNumber)};
-    Number.isNaN(digitString) = ${Number.isNaN(digitString)};
-    Number.isNaN(yearOfBirth) = ${Number.isNaN(yearOfBirth)};
-    Number.isNaN(true) = ${Number.isNaN(true)};
-    Number.isNaN(false) = ${Number.isNaN(false)};
-    \n\
-    isNaN(NaN) = ${isNaN(NaN)};
-    isNaN(stringNumber) = ${isNaN(stringNumber)};
-    isNaN(digitString) = ${isNaN(digitString)};
-    isNaN(yearOfBirth) = ${isNaN(yearOfBirth)};
-    isNaN(true) = ${isNaN(true)};
-    isNaN(false) = ${isNaN(false)};
-    \n\
-    Number.isInteger(age) = ${Number.isInteger(age)};
-    Number.isInteger(yearOfBirth) = ${Number.isInteger(yearOfBirth)};
-    Number.isInteger(POSITIVE_INFINITY) = ${Number.isInteger(POSITIVE_INFINITY)};
-    Number.isInteger(NEGATIVE_INFINITY) = ${Number.isInteger(NEGATIVE_INFINITY)};
-    Number.isInteger(NaN) = ${Number.isInteger(NaN)};
-    Number.isInteger(stringNumber) = ${Number.isInteger(stringNumber)};
-    Number.isInteger(digitString) = ${Number.isInteger(digitString)};
-    Number.isInteger(true) = ${Number.isInteger(true)};
-    Number.isInteger(false) = ${Number.isInteger(false)};
-    \n\
-    Number.isSafeInteger(age) = ${Number.isSafeInteger(age)};
-    Number.isSafeInteger(yearOfBirth) = ${Number.isSafeInteger(yearOfBirth)};
-    Number.isSafeInteger(POSITIVE_INFINITY) = ${Number.isSafeInteger(POSITIVE_INFINITY)};
-    Number.isSafeInteger(NEGATIVE_INFINITY) = ${Number.isSafeInteger(NEGATIVE_INFINITY)};
-    Number.isSafeInteger(NaN) = ${Number.isSafeInteger(NaN)};
-    Number.isSafeInteger(stringNumber) = ${Number.isSafeInteger(stringNumber)};
-    Number.isSafeInteger(digitString) = ${Number.isSafeInteger(digitString)};
-    Number.isSafeInteger(true) = ${Number.isSafeInteger(true)};
-    Number.isSafeInteger(false) = ${Number.isSafeInteger(false)};
-    Number.isSafeInteger(MAX_SAFE_INTEGER) = ${Number.isSafeInteger(MAX_SAFE_INTEGER)};
-    Number.isSafeInteger(MIN_SAFE_INTEGER) = ${Number.isSafeInteger(MIN_SAFE_INTEGER)};
-    \n\
-    parseFloat('zero' + '0') = ${parseFloat(digitString + stringNumber)};
-    parseFloat('0' + 'zero') = ${parseFloat(stringNumber + digitString)};
-    \n\
-    parseInt('zero' + '0') = ${parseInt(digitString + stringNumber)};
-    parseInt('0' + 'zero') = ${parseInt(stringNumber + digitString)};
-    \n\
-    parseInt(30 + 'zero', binary) = ${parseInt(age + stringNumber, 2)};
-    parseInt('zero' + 30, binary) = ${parseInt(stringNumber + age, 2)};
-    parseInt(30 + 'zero', hex) = ${parseInt(age + stringNumber, 16)};
-    parseInt('zero' + 30, hex) = ${parseInt(stringNumber + age, 16)};
-    parseInt(30 + 'zero', octal) = ${parseInt(age + stringNumber, 8)};
-    parseInt('zero' + 30, octal) = ${parseInt(stringNumber + age, 8)};
-    \n\
-    Number(true) = ${Number(true)};
-    Number(false) = ${Number(+false)};
-    Number(null) = ${Number(null)};
-    Number(undefined) = ${Number(undefined)};
-    Number(stringNumber) = ${Number(stringNumber)};
-    Number(digitString) = ${Number(digitString)};
-    Number(phoneNumber) = ${Number(phoneNumber)};
-  `);
-
-  /* Math.object */
-  console.log(Math);
-
-  /* Properties */
-  const PI = Math.PI; // Ratio of a circle's circumference to its diameter; approximately 3.14159.
-  const E = Math.E; // Euler's constant and the base of natural logarithms; approximately 2.718.
-  const SQRT2 = Math.SQRT2; // Square root of 2; approximately 1.414.
-  const SQRT1_2 = Math.SQRT1_2; // Square root of ½; approximately 0.707.
-  const LN2 = Math.LN2; // Natural logarithm of 2; approximately 0.693.
-  const LN10 = Math.LN10; // Natural logarithm of 10; approximately 2.303.
-  const LOG2E = Math.LOG2E; // Base-2 logarithm of E; approximately 1.443.
-  const LOG10E = Math.LOG10E; // Base-10 logarithm of E; approximately 0.434.
+  /* Methods & Type Conversion & Coercion */
+  let digitString = Number(`0`);
+  let stringNumber = Number(`zero`);
+  let trueNumber = Number(true);
+  let falseNumber = Number(false);
+  let nullNumber = Number(null);
+  let undefinedNumber = Number(undefined);
 
   /* Methods */
-  console.log(`
-    Math.abs(-Infinity) = ${Math.abs(NEGATIVE_INFINITY)};
-    Math.ceil(PI) = ${Math.ceil(PI)};
-    Math.floor(E) = ${Math.floor(E)};
-    Math.pow(SQRT1_2, SQRT2) = ${Math.pow(SQRT1_2, SQRT2)};
-    Math.round(Math.random() * 6 + 1) = ${Math.round(Math.random() * 6 + 1)};
-    Math.min(LN2, LN10) = ${Math.min(LN2, LN10)};
-    Math.max(LOG2E, LOG10E) = ${Math.max(LOG2E, LOG10E)};
-  `);
+  console.log(
+    `Number.methods(): \n`,
+    `MIN_VALUE.valueOf(): \n`,
+    MIN_VALUE.valueOf(),
+    `\n\ MAX_VALUE.valueOf(): \n`,
+    MAX_VALUE.valueOf(),
+  );
+
+  console.log(
+    `threeBillion.toPrecision(4): \n`,
+    threeBillion.toPrecision(4),
+    `\n\ million.toFixed(3): \n`,
+    million.toFixed(3),
+    `\n\ macro.toExponential(2): \n`,
+    macro.toExponential(2),
+  );
+
+  console.log(
+    `Number.isInteger(age): \n`,
+    Number.isInteger(age),
+    `\n\ Number.isInteger(yearOfBirth): \n`,
+    Number.isInteger(yearOfBirth),
+    `\n\ Number.isInteger(POSITIVE_INFINITY): \n`,
+    Number.isInteger(POSITIVE_INFINITY),
+    `\n\ Number.isInteger(NEGATIVE_INFINITY): \n`,
+    Number.isInteger(NEGATIVE_INFINITY),
+    `\n\ Number.isInteger(minus): \n`,
+    Number.isInteger(minus),
+    `\n\ Number.isInteger(0): \n`,
+    Number.isInteger(0),
+    `\n\ Number.isInteger(plusZero): \n`,
+    Number.isInteger(plusZero),
+    `\n\ Number.isInteger(minusZero): \n`,
+    Number.isInteger(minusZero),
+    `\n\ Number.isInteger(NaN): \n`,
+    Number.isInteger(NaN),
+    `\n\ Number.isInteger(digitString): \n`,
+    Number.isInteger(digitString),
+    `\n\ Number.isInteger(stringNumber): \n`,
+    Number.isInteger(stringNumber),
+    `\n\ Number.isInteger(trueNumber): \n`,
+    Number.isInteger(trueNumber),
+    `\n\ Number.isInteger(falseNumber): \n`,
+    Number.isInteger(falseNumber),
+    `\n\ Number.isInteger(nullNumber): \n`,
+    Number.isInteger(nullNumber),
+    `\n\ Number.isInteger(undefinedNumber): \n`,
+    Number.isInteger(undefinedNumber),
+  );
+
+  console.log(
+    `Number.isSafeInteger(age): \n`,
+    Number.isSafeInteger(age),
+    `\n\ Number.isSafeInteger(yearOfBirth): \n`,
+    Number.isSafeInteger(yearOfBirth),
+    `\n\ Number.isSafeInteger(POSITIVE_INFINITY): \n`,
+    Number.isSafeInteger(POSITIVE_INFINITY),
+    `\n\ Number.isSafeInteger(NEGATIVE_INFINITY): \n`,
+    Number.isSafeInteger(NEGATIVE_INFINITY),
+    `\n\ Number.isSafeInteger(MAX_SAFE_INTEGER): \n`,
+    Number.isSafeInteger(MAX_SAFE_INTEGER),
+    `\n\ Number.isSafeInteger(MIN_SAFE_INTEGER): \n`,
+    Number.isSafeInteger(MIN_SAFE_INTEGER),
+    `\n\ Number.isSafeInteger(minus): \n`,
+    Number.isSafeInteger(minus),
+    `\n\ Number.isSafeInteger(0): \n`,
+    Number.isSafeInteger(0),
+    `\n\ Number.isSafeInteger(plusZero): \n`,
+    Number.isSafeInteger(plusZero),
+    `\n\ Number.isSafeInteger(minusZero): \n`,
+    Number.isSafeInteger(minusZero),
+    `\n\ Number.isSafeInteger(NaN): \n`,
+    Number.isSafeInteger(NaN),
+    `\n\ Number.isSafeInteger(digitString): \n`,
+    Number.isSafeInteger(digitString),
+    `\n\ Number.isSafeInteger(stringNumber): \n`,
+    Number.isSafeInteger(stringNumber),
+    `\n\ Number.isSafeInteger(trueNumber): \n`,
+    Number.isSafeInteger(trueNumber),
+    `\n\ Number.isSafeInteger(falseNumber): \n`,
+    Number.isSafeInteger(falseNumber),
+    `\n\ Number.isSafeInteger(nullNumber): \n`,
+    Number.isSafeInteger(nullNumber),
+    `\n\ Number.isSafeInteger(undefinedNumber): \n`,
+    Number.isSafeInteger(undefinedNumber),
+  );
+
+  console.log(
+    `Number.isFinite(POSITIVE_INFINITY): \n`,
+    Number.isFinite(POSITIVE_INFINITY),
+    `\n\ Number.isFinite(NEGATIVE_INFINITY): \n`,
+    Number.isFinite(NEGATIVE_INFINITY),
+    `\n\ Number.isFinite(age): \n`,
+    Number.isFinite(age),
+    `\n\ Number.isFinite(minus): \n`,
+    Number.isFinite(minus),
+    `\n\ Number.isFinite(0): \n`,
+    Number.isFinite(0),
+    `\n\ Number.isFinite(plusZero): \n`,
+    Number.isFinite(plusZero),
+    `\n\ Number.isFinite(minusZero): \n`,
+    Number.isFinite(minusZero),
+    `\n\ Number.isFinite(NaN): \n`,
+    Number.isFinite(NaN),
+    `\n\ Number.isFinite(digitString): \n`,
+    Number.isFinite(digitString),
+    `\n\ Number.isFinite(stringNumber): \n`,
+    Number.isFinite(stringNumber),
+    `\n\ Number.isFinite(trueNumber): \n`,
+    Number.isFinite(trueNumber),
+    `\n\ Number.isFinite(falseNumber): \n`,
+    Number.isFinite(falseNumber),
+    `\n\ Number.isFinite(nullNumber): \n`,
+    Number.isFinite(nullNumber),
+    `\n\ Number.isFinite(undefinedNumber): \n`,
+    Number.isFinite(undefinedNumber),
+  );
+
+  console.log(
+    `Number.isNaN(age): \n`,
+    Number.isNaN(age),
+    `\n\ Number.isNaN(yearOfBirth): \n`,
+    Number.isNaN(yearOfBirth),
+    `\n\ Number.isNaN(POSITIVE_INFINITY): \n`,
+    Number.isNaN(POSITIVE_INFINITY),
+    `\n\ Number.isNaN(NEGATIVE_INFINITY): \n`,
+    Number.isNaN(NEGATIVE_INFINITY),
+    `\n\ Number.isNaN(minus): \n`,
+    Number.isNaN(minus),
+    `\n\ Number.isNaN(0): \n`,
+    Number.isNaN(0),
+    `\n\ Number.isNaN(plusZero): \n`,
+    Number.isNaN(plusZero),
+    `\n\ Number.isNaN(minusZero): \n`,
+    Number.isNaN(minusZero),
+    `\n\ Number.isNaN(NaN): \n`,
+    Number.isNaN(NaN),
+    `\n\ Number.isNaN(stringNumber): \n`,
+    Number.isNaN(stringNumber),
+    `\n\ Number.isNaN(digitString): \n`,
+    Number.isNaN(digitString),
+    `\n\ Number.isNaN(trueNumber): \n`,
+    Number.isNaN(trueNumber),
+    `\n\ Number.isNaN(falseNumber): \n`,
+    Number.isNaN(falseNumber),
+    `\n\ Number.isNaN(nullNumber): \n`,
+    Number.isNaN(nullNumber),
+    `\n\ Number.isNaN(undefinedNumber): \n`,
+    Number.isNaN(undefinedNumber),
+  );
+
+  console.log(
+    `isNaN(age): \n`,
+    isNaN(age),
+    `\n\ isNaN(yearOfBirth): \n`,
+    isNaN(yearOfBirth),
+    `\n\ isNaN(POSITIVE_INFINITY): \n`,
+    isNaN(POSITIVE_INFINITY),
+    `\n\ isNaN(NEGATIVE_INFINITY): \n`,
+    isNaN(NEGATIVE_INFINITY),
+    `\n\ isNaN(minus): \n`,
+    isNaN(minus),
+    `\n\ isNaN(0): \n`,
+    isNaN(0),
+    `\n\ isNaN(plusZero): \n`,
+    isNaN(plusZero),
+    `\n\ isNaN(minusZero): \n`,
+    isNaN(minusZero),
+    `\n\ isNaN(NaN): \n`,
+    isNaN(NaN),
+    `\n\ isNaN(stringNumber): \n`,
+    isNaN(stringNumber),
+    `\n\ isNaN(digitString): \n`,
+    isNaN(digitString),
+    `\n\ isNaN(trueNumber): \n`,
+    isNaN(trueNumber),
+    `\n\ isNaN(falseNumber): \n`,
+    isNaN(falseNumber),
+    `\n\ isNaN(nullNumber): \n`,
+    isNaN(nullNumber),
+    `\n\ isNaN(undefinedNumber): \n`,
+    isNaN(undefinedNumber),
+  );
+
+  console.log(
+    `\n\ Type converted digit string (let digitString = '0'): \n`,
+    digitString,
+    `\n\ Type converted string (let stringNumber = 'zero'): \n`,
+    stringNumber,
+    `\n\ Type converted boolean (let trueNumber = true): \n`,
+    trueNumber,
+    `\n\ Type converted boolean (let falseNumber = false): \n`,
+    falseNumber,
+    `\n\ Type converted null (let nullNumber = null): \n`,
+    nullNumber,
+    `\n\ Type converted undefined (let undefinedNumber = undefined): \n`,
+    undefinedNumber,
+  );
+
+  console.log(
+    `parseFloat('zero' + '0'): \n`,
+    parseFloat(digitString + stringNumber),
+    `\n\ parseFloat('0' + 'zero'): \n`,
+    parseFloat(stringNumber + digitString),
+  );
+
+  console.log(
+    `parseInt('zero' + '0'): \n`,
+    parseInt(digitString + stringNumber),
+    `\n\ parseInt('0' + 'zero'): \n`,
+    parseInt(stringNumber + digitString),
+    `\n\ parseInt(30 + 'zero', binary): \n`,
+    parseInt(age + stringNumber, 2),
+    `\n\ parseInt('zero' + 30, binary): \n`,
+    parseInt(stringNumber + age, 2),
+    `\n\ parseInt(30 + 'zero', hex): \n`,
+    parseInt(age + stringNumber, 16),
+    `\n\ parseInt('zero' + 30, hex): \n`,
+    parseInt(stringNumber + age, 16),
+    `\n\ parseInt(30 + 'zero', octal): \n`,
+    parseInt(age + stringNumber, 8),
+    `\n\ parseInt('zero' + 30, octal): \n`,
+    parseInt(stringNumber + age, 8),
+  );
+
+  console.log(
+    `\n\ yearOfBirth.toLocaleString(): \n`,
+    yearOfBirth.toLocaleString(),
+    `\n\ (decimal)yearOfBirth.toString(): \n`,
+    yearOfBirth.toString(),
+    `\n\ (binary)yearOfBirth.toString(2): \n`,
+    yearOfBirth.toString(2),
+    `\n\ (hex)yearOfBirth.toString(16): \n`,
+    yearOfBirth.toString(16),
+    `\n\ (octal)yearOfBirth.toString(8): \n`,
+    yearOfBirth.toString(8),
+  );
+
+  /* Type Coercion */
+  console.log('9' - '5');
+  console.log('19' - '13' + '17');
+  console.log('19' - '13' + 17);
+  console.log('123' < 57);
+  console.log(5 + 6 + '4' + 9 - 4 - 2);
+
+  /* Math.object - Properties & Methods */
+  const PI = Math.PI;
+  const E = Math.E;
+  const SQRT2 = Math.SQRT2;
+  const SQRT1_2 = Math.SQRT1_2;
+  const LN2 = Math.LN2;
+  const LN10 = Math.LN10;
+  const LOG2E = Math.LOG2E;
+  const LOG10E = Math.LOG10E;
+
+  console.log(
+    `Ratio of a circle's circumference to its diameter; approximately 3.14159 (Math.PI): \n`,
+    PI,
+    `\n\ Euler's constant and the base of natural logarithms; approximately 2.718 (Math.E): \n`,
+    E,
+    `\n\ Square root of 2; approximately 1.414 (Math.SQRT2): \n`,
+    SQRT2,
+    `\n\ Square root of ½; approximately 0.707 (Math.SQRT1_2): \n`,
+    SQRT1_2,
+    `\n\ Natural logarithm of 2; approximately 0.693 (Math.LN2): \n`,
+    LN2,
+    `\n\ Natural logarithm of 10; approximately 2.303 (Math.LN10): \n`,
+    LN10,
+    `\n\ Base-2 logarithm of E; approximately 1.443 (Math.LOG2E): \n`,
+    LOG2E,
+    `\n\ Base-10 logarithm of E; approximately 0.434 (Math.LOG10E): \n`,
+    LOG10E,
+  );
+
+  console.log(
+    `Math.abs(-Infinity): \n`,
+    Math.abs(NEGATIVE_INFINITY),
+    `\n\ Math.ceil(PI): \n`,
+    Math.ceil(PI),
+    `\n\ Math.floor(E): \n`,
+    Math.floor(E),
+    `\n\ Math.pow(SQRT1_2, SQRT2): \n`,
+    Math.pow(SQRT1_2, SQRT2),
+    `\n\ Pseudo D6 roll - Math.round(Math.random() * 6 + 1): \n`,
+    Math.round(Math.random() * 6 + 1),
+    `\n\ Math.min(LN2, LN10): \n`,
+    Math.min(LN2, LN10),
+    `\n\ Math.max(LOG2E, LOG10E): \n`,
+    Math.max(LOG2E, LOG10E),
+  );
 
   /* Arithmetic & Increment / Decrement operator */
-  console.log(`
-    yearOfBirth**(null - age) (B.I.D.M.A.S.) = ${yearOfBirth ** (null - age)};
-    \n\
-    undefined + yearOfBirth = ${undefined + yearOfBirth};
-    yearOfBirth / stringNumber = ${yearOfBirth / stringNumber};
-    yearOfBirth / digitString = ${yearOfBirth / digitString};
-    0 / 0 = ${0 / 0};
-    1 / 0 = ${1 / 0};
-    1 / -0 = ${1 / -0};
-    -1 / 0 = ${-1 / 0};
-    -1 / -0 = ${-1 / -0};
-    \n\
-    yearOfBirth % age (remainder) = ${yearOfBirth % age};
-    \n\
-    age++ (age = age + 1) = ${age++};
-    age-- (age = age - 1) = ${age--};
-    ++age (age = age + 1) = ${++age};
-    --age (age = age - 1) = ${--age};
-    \n\
-    age += 2 (age = age + 2) = ${(age += 2)};
-    age -= 2 (age = age - 2) = ${(age -= 2)};
-    age *= 2 (age = age * 2) = ${(age *= 2)};
-    age /= 2 (age = age / 2) = ${(age /= 2)};
-  `);
+  console.log(
+    `(B.I.D.M.A.S.) yearOfBirth**(null - age): \n`,
+    yearOfBirth ** (null - age),
+    `\n\ undefined + yearOfBirth: \n`,
+    undefined + yearOfBirth,
+    `\n\ yearOfBirth / stringNumber: \n`,
+    yearOfBirth / stringNumber,
+    `\n\ yearOfBirth / digitString: \n`,
+    yearOfBirth / digitString,
+    `\n\ 0 / 0: \n`,
+    0 / 0,
+    `\n\ 1 / 0: \n`,
+    1 / 0,
+    `\n\ 1 / -0: \n`,
+    1 / -0,
+    `\n\ -1 / 0: \n`,
+    -1 / 0,
+    `\n\ -1 / -0: \n`,
+    -1 / -0,
+    `\n\ (remainder) yearOfBirth % age: \n`,
+    yearOfBirth % age,
+    `\n\ age++ (age = age + 1): \n`,
+    age++,
+    `\n\ age-- (age = age - 1): \n`,
+    age--,
+    `\n\ ++age (age = age + 1): \n`,
+    ++age,
+    `\n\ --age (age = age - 1): \n`,
+    --age,
+    `\n\ age += 2 (age = age + 2): \n`,
+    (age += 2),
+    `\n\ age -= 2 (age = age - 2): \n`,
+    (age -= 2),
+    `\n\ age *= 2 (age = age * 2): \n`,
+    (age *= 2),
+    `\n\ age /= 2 (age = age / 2): \n`,
+    (age /= 2),
+  );
 
-  /* Type coercion */
-  console.log('9' - '5', '19' - '13' + '17', '19' - '13' + 17, '123' < 57, 5 ** 6 + '4' - (9 / 4) * 2);
-
-  /* BigInt */
-  console.log(BigInt.prototype);
+  /* BigInt DT */
   const bigInt = 9007199254740991n;
-  const smallInt = BigInt(-9007199254740991n); // Type conversion too
+  const smallInt = BigInt(minus); // Type conversion too
 
   /* Methods & Type conversion */
-  console.log(`
-    bigInt.valueOf() = ${bigInt.valueOf()};
-    smallInt.valueOf() = ${smallInt.valueOf()};
-    \n\
-    bigInt.toString() = ${bigInt.toString()};
-    smallInt.toString() = ${smallInt.toString()};
-    \n\
-    bigInt.toLocaleString() = ${bigInt.toLocaleString()};
-    smallInt.toLocaleString() = ${smallInt.toLocaleString()};
-  `);
+  console.log(
+    `After max safe integer (or min safe integer if its minus) (let bigInt = 9007199254740991n): \n`,
+    bigInt,
+    `\n\ Type conversion smallInt (let smallInt = BigInt(-9007199254740991n)): \n`,
+    smallInt,
+    `\n\ bigInt.valueOf(): \n`,
+    bigInt.valueOf(),
+    `\n\ smallInt.valueOf(): \n`,
+    smallInt.valueOf(),
+    `\n\ bigInt.toString(): \n`,
+    bigInt.toString(),
+    `\n\ smallInt.toString(): \n`,
+    smallInt.toString(),
+    `\n\ bigInt.toLocaleString(): \n`,
+    bigInt.toLocaleString(),
+    `\n\ smallInt.toLocaleString(): \n`,
+    smallInt.toLocaleString(),
+  );
 }

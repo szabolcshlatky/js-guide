@@ -2,112 +2,84 @@
 
 export default function datatypeof() {
   const automatic = undefined;
+  console.log(automatic, typeof automatic);
+
   const nullObject = null;
+  console.log(nullObject, typeof nullObject);
 
-  const positive = Infinity;
-  const negative = -Infinity;
-  const nan = NaN;
-  const float = 3.14;
-  const zero = 0;
+  const number = NaN;
+  const Num = new Number();
+  console.log(number, typeof number);
+  console.log(Num, typeof Num);
 
-  const bigInt = 9007199254740991n;
-  const smallInt = -9007199254740991n;
+  const bigint = BigInt(0n);
+  const bigInt = BigInt.prototype;
+  console.log(bigint, typeof bigint);
+  console.log(bigInt, typeof bigInt);
 
-  const string = '0';
-  const str = 'string';
-  const tempStrLit = `Template ${str} literal`;
+  const mathObject = Math;
+  console.log(mathObject, typeof mathObject);
 
-  const True = true;
-  const False = false;
+  const string = `${'' + ''}`;
+  const str = new String();
+  console.log(string, typeof string);
+  console.log(str, typeof str);
 
-  const name = Symbol(`©貂`);
+  const symbol = Symbol();
+  const sym = Symbol.prototype;
+  console.log(symbol, typeof symbol);
+  console.log(sym, typeof sym);
 
-  const array = [`object type`, `can contain every DT as element`, `can hold the same element multiple times`];
+  const regex = new RegExp();
+  console.log(regex, typeof regex);
 
-  const arrBuffer = new ArrayBuffer(16);
-  const dataView = new DataView(arrBuffer);
+  const boolean = true || false;
+  const bool = new Boolean();
+  console.log(boolean, typeof boolean);
+  console.log(bool, typeof bool);
 
-  const set = new Set([`object type`, `can contain every DT as element`, `can hold the same element only once`]);
+  const date = new Date();
+  console.log(date, typeof date);
+
+  const func = new Function();
+  console.log(func, typeof func);
+
+  const array = new Array();
+  console.log(array, typeof array);
+
+  const set = new Set();
+  console.log(set, typeof set);
 
   const weakSet = new WeakSet();
+  console.log(weakSet, typeof weakSet);
 
-  let wS1 = { a: `garbage collection` };
-  let wS2 = { b: `weak references` };
-  let wS3 = { c: `only objects` };
-  let wS4 = { d: `can't iterate on it` };
+  const object = new Object();
+  console.log(object, typeof object);
 
-  weakSet.add(wS1).add(wS2).add(wS3).add(wS4);
+  const map = new Map();
+  console.log(map, typeof map);
 
-  const objectLiteral = {
-    key: `only string and symbol keys`,
-    key2: name,
-  };
-
-  const map = new Map([
-    [`key`, `value`],
-    [`any data-type key`, `value`],
-  ]);
-
-  const weakMap = new WeakMap([
-    [{}, `non-iterable`],
-    [{}, `garbage`],
-  ]);
-
-  const specObjFuncExp = function (parameter) {
-    console.log(
-      `
-      ${typeof automatic}\n
-      ${typeof nullObject}\n
-      \n\
-      ${typeof positive}\n
-      ${typeof negative}\n
-      ${typeof nan}\n
-      ${typeof float}\n
-      ${typeof zero}\n
-      \n\
-      ${typeof bigInt}\n
-      ${typeof smallInt}\n
-      \n\
-      ${typeof string}\n
-      ${typeof str}\n
-      ${typeof tempStrLit}\n
-      \n\
-      ${typeof True}\n
-      ${typeof False}\n
-      \n\
-      ${typeof name}\n
-      \n\
-      ${typeof specObjFuncExp}\n
-      \n\
-      ${typeof array}\n
-      ${typeof arrBuffer}\n
-      ${typeof dataView}\n
-      ${typeof set}\n
-      ${typeof weakSet}\n
-      \n\
-      ${typeof objectLiteral}\n
-      ${typeof map}\n
-      ${typeof weakMap}\n
-      `,
-    );
-
-    return typeof parameter;
-  };
-
-  const callInvoke = specObjFuncExp(`argument`);
-  console.log(callInvoke);
+  const weakMap = new WeakMap();
+  console.log(weakMap, typeof weakMap);
 
   /* Primitive */
 
-  let primitive_1 = null;
+  let primitive_1 = undefined;
   let primitive_2 = primitive_1;
 
-  console.log(`primitive_1: ${primitive_1}`, `primitive_2 copied the 'null' value: ${primitive_2}`);
-
-  primitive_1 = undefined;
-
   console.log(
-    `primitive_1 (${primitive_1}) won't change the original 'null' copy for the primitive_2, so it stays null: ${primitive_2}`,
+    `let primitive_1: \n`,
+    primitive_1,
+    `\n\ primitive_2 copied the 'undefined' value (let primitive_2 = primitive_1): \n`,
+    primitive_2,
+  );
+
+  primitive_1 = null;
+  console.log(
+    `primitive_1 = null: \n`,
+    primitive_1,
+    `\n\ primitive_1 won't change the original 'undefined' copy for the primitive_2, so it stays undefined: \n`,
+    primitive_2,
   );
 
   /* Reference */
@@ -118,12 +90,21 @@ export default function datatypeof() {
   };
 
   const reference_2 = reference_1;
+
   console.log(
-    `reference_2 (${reference_2}) copied reference_1 (${reference_1}) object typed variable's pointer to the stack not the value itself.`,
+    `const reference_1 = {primitive_1, primitive_2}: \n`,
+    reference_1,
+    `\n\ const reference_2 = reference_1: \n\ `,
+    reference_2,
+    `reference_2 copied reference_1 object typed variable's pointer to the stack not the value itself.`,
   );
 
-  reference_1.primitive_1 = null;
+  reference_1.primitive_2 = null;
   console.log(
-    `This changed both ${reference_1.primitive_1} and ${reference_2.primitive_2} to 'null', because the value is changed in the heap. If we update one, it updates all and doesn't matter that if we would change the value at 'reference_2' either... same result.`,
+    `reference_1.primitive_2 = null: \n`,
+    reference_1,
+    `\n\ reference_1.primitive_2 changed the original 'undefined' copy for the reference_2, so its also changed to null: \n`,
+    reference_2,
+    `\n\ If we update one, it updates all and doesn't matter that if we would change the value at 'reference_2' either... same result because of the HEAP.`,
   );
 }

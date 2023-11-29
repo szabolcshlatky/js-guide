@@ -1,15 +1,15 @@
 `use strict`;
 
 export default function output() {
-  alert(`Hello World`); // Alert box
+  alert(`Hello World`);
   prompt(`Alert box with text input field. Which returns with a string`);
   confirm(`Alert box text with 'OK' and 'cancel' buttons. This way returns true or false.`);
-  scrollTo(0, 0); // Scrolling the window on x and y coordinates
-  outerWidth; // Returns the width in pixels.
 
-  window.console.clear();
-  /* // We can leave the 'window.' part, because its the global object. */
+  console.clear();
   console.log(console);
   console.log(window);
-  console.log(this); // Returns the scope where the this keyword called. Now it would return the global (= window) object.
+  console.log(`window.outerWidth returns the width in pixels: ${window.outerWidth}`);
+  console.log(`Because "window" is the GLOBAL object we can leave the window. part (outerHeight):`, outerHeight);
+  console.log(`Scrolling the browser window (scrollTo(0, 0)):`);
+  scrollTo(0, 0);
 }
