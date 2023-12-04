@@ -71,6 +71,16 @@
           color: red;
         }
       }
+
+      @media (max-width: 990px) {
+        flex-direction: column;
+        gap: 1em;
+
+        article,
+        aside {
+          width: 100%;
+        }
+      }
     }
 
     footer {

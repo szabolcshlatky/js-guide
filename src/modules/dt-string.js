@@ -2,6 +2,7 @@
 
 export default function string() {
   /* String */
+
   let firstName = 'Szabolcs';
   let lastName = 'Hlatky';
   let email = `szabolcshlatky@gmail.com`;
@@ -14,77 +15,43 @@ export default function string() {
     fullName + "'s: " + email
   }</a>`;
 
-  console.log(
-    `let firstName = 'Szabolcs': \n`,
-    firstName,
-    `\n\ let lastName = "Hlatky": \n`,
-    lastName,
-    `\n\ let email = (backticks)szabolcshlatky@gmail.com(Alt Gr + 7): \n`,
-    email,
-    `\n\ let fullName = '   ' + firstName + ' ' + lastName + '   ': \n`,
-    fullName,
-    `\n\ let templateLiteral = <a href="mailto: {email} target="_blank title="Opens the email client from a new web-browser-tab">{fullName + "'s: " + email}</a>: \n`,
-    templateLiteral,
-  );
+  console.log(firstName);
+  console.log(lastName);
+  console.log(email);
+  console.log(fullName);
+  console.log(templateLiteral);
 
   /* Properties & Methods & Type conversion */
-  console.log(
-    `(JS is zero based language) firstName[0]: \n`,
-    firstName[0],
-    `\n\ lastName.charAt(2): \n`,
-    lastName.charAt(2),
-    `\n\ fullName.length: \n`,
-    fullName.length,
-    `\n\ templateLiteral[templateLiteral.length - 1]: \n`,
-    templateLiteral[templateLiteral.length - 1],
-    `\n\ firstName.toUpperCase(): \n`,
-    firstName.toUpperCase(),
-    `\n\ lastName.toLowerCase(): \n`,
-    lastName.toLowerCase(),
-    `\n\ fullName.trim(): \n`,
-    fullName.trim(),
-    `\n\ email.startsWith('s'): \n`,
-    email.startsWith(`s`),
-    `\n\ email.endsWith('hu'): \n`,
-    email.endsWith(`hu`),
-    `\n\ email.includes('@'): \n`,
-    email.includes(`@`),
-    `\n\ email.indexOf('@'): \n`,
-    email.indexOf(`@`),
-    `\n\ email.lastIndexOf('c'): \n`,
-    email.lastIndexOf(`c`),
-    `\n\ email.slice(10,13): \n`,
-    email.slice(10, 13),
-    `\n\ email.substr(0,4): \n`,
-    email.substr(0, 4),
-    `\n\ email.substring(0,4): \n`,
-    email.substring(0, 4),
-    `\n\ email.replaceAll('s', 'S'): \n`,
-    email.replaceAll(`s`, `S`),
-  );
 
-  console.log(
-    `String(true): \n`,
-    String(true),
-    `\n\ String(false): \n`,
-    String(false),
-    `\n\ String(null): \n`,
-    String(null),
-    `\n\ String(undefined): \n`,
-    String(undefined),
-    `\n\ String(NaN): \n`,
-    String(NaN),
-    `\n\ String(Infinity): \n`,
-    String(Infinity),
-    `\n\ String(-Infinity): \n`,
-    String(-Infinity),
-    `\n\ String(phoneNumber).replace('0.6', '+36').concat( email): \n`,
-    String(phoneNumber).replace(`0.6`, `+36`).concat(` ${email}`),
-  );
+  console.log(firstName[0]);
+  console.log(lastName.charAt(2));
+  console.log(fullName.length);
+  console.log(templateLiteral[templateLiteral.length - 1]);
+  console.log(firstName.toUpperCase());
+  console.log(lastName.toLowerCase());
+  console.log(fullName.trim());
+  console.log(email.startsWith(`s`));
+  console.log(email.endsWith(`hu`));
+  console.log(email.includes(`@`));
+  console.log(email.indexOf(`@`));
+  console.log(email.lastIndexOf(`c`));
+  console.log(email.slice(10, 13));
+  console.log(email.substr(0, 4));
+  console.log(email.substring(0, 4));
+  console.log(email.replaceAll(`s`, `S`));
+
+  console.log(String(true));
+  console.log(String(false));
+  console.log(String(null));
+  console.log(String(undefined));
+  console.log(String(NaN));
+  console.log(String(Infinity));
+  console.log(String(-Infinity));
+  console.log(String(phoneNumber).replace(`0.6`, `+36`).concat(` ${email}`));
 
   /* Iteration */
 
-  for (const char of `for...of loop `) {
-    console.log(`char (is a variable for the actual element or character from the iteration) = ${char} `);
+  for (const char of `for...of loop`) {
+    console.log(char);
   }
 }

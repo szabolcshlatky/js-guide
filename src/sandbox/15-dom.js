@@ -4,18 +4,18 @@
 
 console.log(document);
 
-  /* a) Quering Elements */
-    /* QE/a) ElementChild & getElementsBy ways */
+/* a) Quering Elements */
+/* QE/a) ElementChild & getElementsBy ways */
 var heading = document.firstElementChild.lastElementChild.firstElementChild;
 
 heading.style.color = `red`;
-   
+
 document.getElementsByTagName(`li`); // returns HTMLCollection (array-like) and we need to specify the [index].
 document.getElementsByTagName(`li`)[0].style.color = `goldenrod`;
 document.getElementsByTagName(`li`).length;
-  
+
 document.getElementsByClassName(`item`);
-  
+
 /* The best ways: */
 
 /*
@@ -24,7 +24,7 @@ document.getElementsByClassName(`item`);
   const $$$ = (jquery) => document.querySelectorAll(jquery);
 */
 
-    /* QE/b) ID selector */
+/* QE/b) ID selector */
 
 const title = $(`title`);
 title.innerHTML = `
@@ -35,7 +35,7 @@ title.innerHTML = `
   </data>
 `;
 
-    /* QE/c) CSS selector */
+/* QE/c) CSS selector */
 
 const para = $$(`p`);
 console.log(para);
@@ -43,28 +43,28 @@ console.log(para);
 const errorPara = $$(`.error`);
 console.log(errorPara);
 
-const errorDiv = $$(`div.error`); 
+const errorDiv = $$(`div.error`);
 console.log(errorDiv);
 
 const domH2 = $$(`body > main > .dom > h2`); // To get an element's unique CSS selector - Right click, inspect and at the DevTools's HTML part, right click on the element and copy selector.
 console.log(domH2);
 
-  /* c) NodeList */
+/* c) NodeList */
 const paras = $$$(`p`);
 console.log(paras); // Returns node-list which is not Array
 
 const errors = $$$(`.error`);
 console.log(errors);
 
-    /* NL/a) Getting elements */
+/* NL/a) Getting elements */
 console.log(paras[0]);
 
-    /* NL/b) Methods */
-paras.forEach(para => {
+/* NL/b) Methods */
+paras.forEach((para) => {
   console.log(para);
 });
 
-  /* d) Page content properties */
+/* d) Page content properties */
 // const para = $$(`p`); - Already declared
 
 console.log(para.innerText); // Returns the element's visible text content.
@@ -75,7 +75,7 @@ console.log(para.innerText);
 para.innerText += ` Hello World!`; // Adding extra text content
 
 // const paras = $$$(`p`); - Already declared
-paras.forEach(par => {
+paras.forEach((par) => {
   console.log(par.innerText);
   par.innerText += ` new text by forEach()`;
 });
@@ -93,11 +93,11 @@ content.innerHTML += `<p>This is a new P</p>`; // This appends content.
 
 let Concat_Array = [`shaun`, `ken`, `chun-li`, `crystal`, `yoshi`];
 
-Concat_Array.forEach(ninja => {
+Concat_Array.forEach((ninja) => {
   content.innerHTML += `<p>${ninja}</p>`;
 });
 
-  /* e) Attributes */
+/* e) Attributes */
 const aMDN = $$(`a`);
 
 console.log(aMDN.attributes); // Returns attribute NamedNodeMap
@@ -106,7 +106,7 @@ console.log(aMDN.getAttribute(`rel`)); // Returns attribute value
 aMDN.setAttribute(`target`, `_blank`); // Changes existing attribute's value.
 aMDN.setAttribute(`style`, `text-decoration: overline`); // Adds new attribute with value.
 
-  /* f) CSS Styles */
+/* f) CSS Styles */
 console.log(domH2.style); // Returns the CSS styles which can be use or already been used.
 
 domH2.style.fontSize = `3rem`; // Camel case property names and string values. If I would use empty string it would removes the CSS property.
@@ -114,9 +114,9 @@ console.log(domH2.style.fontSize); // Returns the exact CSS style value.
 
 $$(`ul`).style.backgroundColor = `yellow`;
 
-  /* g) Classes */
+/* g) Classes */
 
-$$$(`button`).forEach(btn => console.log(btn.classList)); // Returns all 'buttons' classes.
+$$$(`button`).forEach((btn) => console.log(btn.classList)); // Returns all 'buttons' classes.
 $$(`.reset`).classList.remove(`invisible`); // Removes class (and remove CSS)
 $$(`.disabled`).classList.add(`invisible`); // Add class (and applies CSS)
 
@@ -127,8 +127,7 @@ $$(`.disabled`).classList.toggle(`invisible`); // Remove 'invisible' class becau
 
 const loremTexts = $$$(`.lorem`);
 
-loremTexts.forEach(loremText => {
-
+loremTexts.forEach((loremText) => {
   if (loremText.textContent.includes(`error`)) {
     loremText.classList.add(`errorText`);
   } else if (loremText.textContent.includes(`success`)) {
@@ -158,7 +157,7 @@ console.log(article.children); // Returns a HTMLCollection with all the children
 const arrayFrom_HTMLCollection = Array.from(article.children); // This makes an array from HTMLCollection to use forEach method on them.
 console.log(arrayFrom_HTMLCollection); // This is not desctructive, so the original is still an HTMLCollection.
 
-arrayFrom_HTMLCollection.map(child => {
+arrayFrom_HTMLCollection.map((child) => {
   child.classList.add(`article-element`);
 });
 
@@ -194,10 +193,10 @@ console.log(h4.nextElementSibling.parentElement.children); // Chaining to childr
 //   });
 // });
 
-//     /* EL/a) Event Bubbling & Delegation 
-    
+//     /* EL/a) Event Bubbling & Delegation
+
 //     If we have click event listener on 'li' and on 'ul' too. By clicking the 'li' event fires and 'bubbles' up to the 'ul' and fires it's click event too.
-    
+
 //     */
 
 // todoItems.forEach(item => {
@@ -217,7 +216,7 @@ console.log(h4.nextElementSibling.parentElement.children); // Chaining to childr
 //   }
 // });
 
-    /* EL/b) copy event */
+/* EL/b) copy event */
 const copyme = $$(`.copy-me`);
 
 copyme.addEventListener(`copy`, () => {
@@ -226,23 +225,23 @@ copyme.addEventListener(`copy`, () => {
 
 submitBTN.addEventListener(`click`, function (event) {
   alert(`I got clicked!`);
-  console.log(event)
+  console.log(event);
 });
 
-    /* EL/c) mousemove event */
+/* EL/c) mousemove event */
 
 const box = $$(`.box`);
 
-box.addEventListener(`mousemove`, e => {
+box.addEventListener(`mousemove`, (e) => {
   box.textContent = `x pos - ${e.offsetX} y pos - ${e.offsetY}`; // Offset is the cursor position in pixels relative to the 'box'.
 });
 
-    /* EL/d) mousemove event */
-document.addEventListener(`wheel`, e => {
+/* EL/d) mousemove event */
+document.addEventListener(`wheel`, (e) => {
   console.log(e.pageX, e.pageY); // Page is the cursor position in pixels relative to the page.
 });
 
-    /* EL/e) keypress event */
+/* EL/e) keypress event */
 
 function anotherAddEventListener(typeOfEvent, callback) {
   // Detect Event Code...
@@ -250,8 +249,8 @@ function anotherAddEventListener(typeOfEvent, callback) {
   let eventThatHappened = {
     eventType: `keypress`,
     key: `p`,
-    durationOfKeypress: 2
-  }
+    durationOfKeypress: 2,
+  };
 
   if (eventThatHappened.eventType === typeOfEvent) {
     callback(eventThatHappened);
@@ -262,11 +261,11 @@ anotherAddEventListener(`keypress`, function (event) {
   console.log(event);
 });
 
-    /* EL/f) keyup & keydown events below... */
+/* EL/f) keyup & keydown events below... */
 
-  /* j) Form Events */
+/* j) Form Events */
 
-    /* FE/a) Regular Expressions patterns & methods 
+/* FE/a) Regular Expressions patterns & methods 
     
       /ninja/ -> input matches with any text, which includes the word 'ninja'
       /^ninja$/ -> input matches with the word 'ninja' only
@@ -289,7 +288,7 @@ console.log(regex_result); // This returns false. But if we would use 6 or more 
 pattern = /^[a-z]{5}$/;
 regex_result = pattern.test(username);
 
-if(regex_result){
+if (regex_result) {
   console.log(`RegEx test passed :)`);
 } else {
   console.log(`RegEx test failed :(`);
@@ -298,33 +297,32 @@ if(regex_result){
 let regEx_result = username.search(pattern); // This RegEx method returns an index number, on where it found the match.
 console.log(regEx_result); // This returns 0 because from 0 position there is a match. If we would get -1, there is no match. This could return other index numbers too, if we don't use ^ and $.
 
-  /* FE/b) RegEx validation */
+/* FE/b) RegEx validation */
 const signupform = $$(`.signup-form`);
 // const username = $(`username`);
 const feedback = $$(`.feedback`);
 const usernamePattern = /^[a-zA-Z]{6,12}$/;
-  
-signupform.addEventListener(`submit`, e => {
+
+signupform.addEventListener(`submit`, (e) => {
   e.preventDefault(); // Prevent the default 'refresh' action.
   // console.log(username.value); // Value gets the typed text.
   console.log(signupform.username); // This gets the 'username' id's input field's value.
 
   const username = signupform.username.value;
 
-  if(usernamePattern.test(username)) {
+  if (usernamePattern.test(username)) {
     feedback.textContent = `That username is valid!`;
   } else {
     feedback.textContent = `Username must contain letters only & be between 6 to 12 characters long!`;
   }
-
 });
 
-  /* FE/c) Live feedback */
-signupform.username.addEventListener(`keyup`, e => {
+/* FE/c) Live feedback */
+signupform.username.addEventListener(`keyup`, (e) => {
   console.log(e);
   console.log(e.target.value, signupform.username.value); // In two different ways: 'target' is the evented element and value is the user's in-put. Now its the 'username' input in 'signupform'.
 
-  if(usernamePattern.test(e.target.value)){
+  if (usernamePattern.test(e.target.value)) {
     console.log(`passed`);
     signupform.username.setAttribute(`class`, `success`);
   } else {
@@ -333,5 +331,5 @@ signupform.username.addEventListener(`keyup`, e => {
   }
 });
 
-  /* FE/d) Methods */
+/* FE/d) Methods */
 // .reset(); is clean the input field after the submit punched in.

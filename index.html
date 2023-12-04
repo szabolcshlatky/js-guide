@@ -27,7 +27,7 @@
   <meta name="audience" content="all" />
   <!-- <meta name="theme-color" content="#000000" /> -->
 
-  <title>JavaScript Fundamentals – Part 1</title>
+  <title>JS ESNext & TS - Guide</title>
 
   <link rel="icon" href="/assets/images/favicon.ico" />
   <link rel="apple-touch-icon" href="/assets/images/favicon.ico" />
@@ -124,73 +124,188 @@
   </figure>
 
   <header>
-    <h1>JavaScript Fundamentals – Part 1 & 2</h1>
+    <h1>
+      <data value="JavaScript">
+        <dfn>
+          <abbr title="JavaScript">JS</abbr>
+        </dfn>
+      </data>
+      <data value="ECMAScript 6+">
+        <dfn>
+          <abbr title="EcmaScript">ESNext</abbr>
+        </dfn>
+      </data> &
+      <data value="TypeScript">
+        <dfn>
+          <abbr title="TypeScript">TS</abbr>
+        </dfn>
+      </data>
+    </h1>
   </header>
 
   <main id="main">
     <article>
       <details>
-        <summary>VAR.IABLES</summary>
-        <p>
-          In JavaScript, identifiers are case-sensitive and can contain Unicode letters, $, _, and digits (0-9), but may
-          not start with a digit. Use camelCase naming with meaningful words. Reserved keywords:
-          https://www.w3schools.com/js/js_reserved.asp
-        </p>
+        <summary>Output</summary>
         <dl>
-          <dt>HOISTING</dt>
-          <dd>In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used
-            before it has been declared.</dd>
-          <dd>Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to
-            the
-            top of the current script or the current function).</dd>
-          <dd>Variables defined with let and const are hoisted to the top of the block, but not initialized. Meaning:
-            The
-            block of code is aware of the variable, but it cannot be used until it has been declared.</dd>
-          <dd>Using a let variable before it is declared will result in a ReferenceError. The variable is in a "temporal
-            dead zone" from the start of the block until it is declared.</dd>
-          <dd>Using a const variable before it is declared, is a syntax error, so the code will simply not run.</dd>
-          <dd>JavaScript only hoists declarations, not initializations.</dd>
-          <dt>TIP:</dt>
-          <dd>Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.</dd>
-          <dd>If a developer doesn't understand hoisting, programs may contain bugs (errors).</dd>
-          <dd>To avoid bugs, always declare all variables at the beginning of every scope.</dd>
-          <dd>Since this is how JavaScript interprets the code, it is always a good rule.</dd>
-          <dd>JavaScript in strict mode does not allow variables to be used if they are not declared.</dd>
+          <dt>GLOBAL (window.) object
+        </dl>
+        <dd>
+          When we use .property or .method() on the (browser) window object we can leave the 'window.' part because its
+          the global object.
+        </dd>
+        <dt>DevTools JS areas</dt>
+        <dd>
+          Code snippets
+        </dd>
+        <dd>
+          <code>console.log(`F12`);</code>
+        </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Variables</summary>
+        <dl>
+          <dt>Var.iable declarations & definitions</dt>
+          <dd>
+            <code>var</code> / <code>let;</code> (<code>= undefined</code> by default)
+          </dd>
+          <dd>
+            <code>const</code>.ant needs value.
+          </dd>
+          <dd>
+            <code>var</code> / <code>let</code> / <code>const define = null;</code>
+          </dd>
+          <dd>
+            Syntax: declaration keyword | identifier* | assignment operator (=) value(s);
+          </dd>
+          <dd>
+            In JavaScript, identifiers are case-sensitive and can contain Unicode letters, $, _, and digits (0-9), but
+            may
+            not start with a digit. Use camelCase naming with meaningful words. <a
+              href="https://www.w3schools.com/js/js_reserved.asp" target="_blank" rel="noopener noreferrer"
+              title="Opens in a new web-browser-tab" aria-label="w3schools">Reserved keywords</a>
+          </dd>
+          <dd>
+            <code>define = undefined;</code> reassigning <code>var</code> / <code>let</code> variables.
+          </dd>
+          <dd>
+            <code>console.log(declare, define);</code> retrieves (returns) the value of the variable.
+          </dd>
+          <dt>DT - <code>undefined</code></dt>
+          <dd>
+            A variable without a value, has the value <code>undefined</code>. The type is also <code>undefined</code>.
+          </dd>
+          <dt>DT - <code>null</code> (object)</dt>
+          <dd>
+            Explicitly setting a variable with no value. It must be assigned.
+          </dd>
         </dl>
         <dl>
+          <dt>HOISTING</dt>
+          <dd>
+            In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used
+            before it has been declared.
+          </dd>
+          <dd>
+            Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the
+            top of the current script or the current function).
+          </dd>
+          <dd>
+            Variables defined with 'let' and 'const' are hoisted to the top of the block, but not initialized. Meaning:
+            The block of code is aware of the variable, but it cannot be used until it has been declared.
+          </dd>
+          <dd>
+            Using a let variable before it is declared will result in a ReferenceError. The variable is in a "temporal
+            dead zone" from the start of the block until it is declared.
+          </dd>
+          <dd>
+            Using a const variable before it is declared, is a syntax error, so the code will simply not run.
+          </dd>
+          <dd>
+            JavaScript only hoists declarations, not initializations or expressions.
+          </dd>
+          <dt>TIP:</dt>
+          <dd>
+            To avoid bugs, always declare all variables at the beginning of every scope.
+          </dd>
+          <dd>
+            JavaScript in `use strict`; mode does not allow variables to be used if they are not declared.
+          </dd>
+        </dl>
+
+        <dl>
           <dt>SCOPING</dt>
-          <dd>In JavaScript, objects and functions are also variables.</dd>
-          <dd>The lifetime of a JavaScript variable starts when it is declared.</dd>
-          <dd>Scope determines the accessibility of variables, objects, and functions from different parts of the code.
+          <dd>
+            In JavaScript, objects and functions are also variables.
+          </dd>
+          <dd>
+            The lifetime of a JavaScript variable starts when it is declared (creation phase).
+          </dd>
+          <dd>
+            Scope determines the accessibility of variables, objects, and functions from different parts of the code.
           </dd>
           <dt>Block Scope</dt>
-          <dd>Variables (let, const) declared inside a { } block cannot be accessed from outside the block.</dd>
-          <dd>Variables declared with the var keyword can NOT have block scope.</dd>
-          <dd>Variables (var) declared inside a { } block can be accessed from outside the block.</dd>
+          <dd>
+            Variables (let, const) declared inside a { } block cannot be accessed from outside the block.
+          </dd>
+          <dd>
+            Variables declared with the var keyword can NOT have block scope.
+          </dd>
+          <dd>
+            Variables (var) declared inside a { } block can be accessed from outside the block.
+          </dd>
           <dt>Local / Function Scope</dt>
-          <dd>Variables declared within a JavaScript function, become LOCAL to the function. They can only be accessed
-            from within the function.</dd>
-          <dd>Since local variables are only recognized inside their functions, variables with the same name can be used
-            in different functions.</dd>
-          <dd>Local variables are created when a function starts, and deleted when the function is completed.</dd>
-          <dd>JavaScript has function scope: Each function creates a new scope.</dd>
-          <dd>Variables defined inside a function are not accessible (visible) from outside the function.</dd>
-          <dd>Variables declared with var, let and const are quite similar when declared inside a function. They all
-            have
-            Function Scope.</dd>
-          <dd>Function (local) variables are deleted when the function is completed.</dd>
-          <dd>Function arguments (parameters) work as local variables inside functions.</dd>
+          <dd>
+            Variables declared within a JavaScript function, become LOCAL to the function. They can only be accessed
+            from within the function.
+          </dd>
+          <dd>
+            Since local variables are only recognized inside their functions, variables with the same name can be used
+            in different functions.
+          </dd>
+          <dd>
+            Local variables are created when a function starts, and deleted when the function is completed. (execution
+            phase)
+          </dd>
+          <dd>
+            JavaScript has function scope: Each function creates a new scope.
+          </dd>
+          <dd>
+            Variables defined inside a function are not accessible (visible) from outside the function.
+          </dd>
+          <dd>
+            Variables declared with var, let and const are quite similar when declared inside a function. They all
+            have Function Scope.
+          </dd>
+          <dd>
+            Function (local) variables are deleted when the function is completed.
+          </dd>
+          <dd>
+            Function arguments (parameters) work as local variables inside functions.
+          </dd>
           <dt>Global Scope</dt>
-          <dd>A variable declared outside a function, becomes GLOBAL. A global variable has Global Scope: All scripts
-            and
-            functions on a web page can access it.</dd>
-          <dd>Variables declared with var, let and const are quite similar when declared outside a block. They all have
-            Global Scope.</dd>
-          <dd>If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL
-            variable.</dd>
-          <dd>You can declare a global variable, even if the value is assigned inside a function.</dd>
-          <dd>In "Strict Mode", undeclared variables are not automatically global.</dd>
-          <dd>With JavaScript, the global scope is the JavaScript environment.
+          <dd>
+            A variable declared outside a function, becomes GLOBAL. A global variable has Global Scope: All scripts and
+            functions on a web page can access it.
+          </dd>
+          <dd>
+            Variables declared with var, let and const are quite similar when declared outside a block. They all have
+            Global Scope.
+          </dd>
+          <dd>
+            If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL
+            variable.
+          </dd>
+          <dd>
+            You can declare a global variable, even if the value is assigned inside a function.
+          </dd>
+          <dd>
+            In `use strict`; mode undeclared variables are not automatically global.
+          </dd>
+          <dd>
+            With JavaScript, the global scope is the JavaScript environment.
             <ul>
               <li>In HTML, the global scope is the window object.</li>
               <li>Global variables defined with the var keyword belong to the window object.</li>
@@ -198,7 +313,8 @@
             </ul>
           </dd>
           <dt>WARNING:</dt>
-          <dd>Do NOT create global variables unless you intend to.
+          <dd>
+            Do NOT create global variables unless you intend to.
             <ul>
               <li>Your global variables (or functions) can overwrite window variables (or functions).</li>
               <li>Any function, including the window object, can overwrite your global variables and functions.</li>
@@ -210,102 +326,848 @@
 
       <details>
         <summary>Data-typeof</summary>
-        <dt>Primitive types</dt>
-        <dd>All primitive types define immutable values (that is, values which can't be changed). For example, strings
-          are immutable. We refer to values of these types as "primitive values".</dd>
-        <dd>'new' constructor keyword: This way we can see the primitive values' methods and properties too.</dd>
-        <dd>Stack:
-          <ul>
-            <li>Primitive values and references</li>
-            <li>Size is known at compile time</li>
-            <li>Allocates a fixed amount of memory</li>
-          </ul>
-        </dd>
-        <dt>Reference types - Everything in JS is an Object.</dt>
-        <dd>In computer science, an object is a value in memory which is possibly referenced by an identifier.</dd>
-        <dd>Heap:
-          <ul>
-            <li>Objects and functions</li>
-            <li>Size is known at run time</li>
-            <li>No limit per object</li>
-          </ul>
-        </dd>
+        <dl>
+          <dt>Primitive types</dt>
+          <dd>
+            All primitive types define immutable values (that is, values which can't be changed). For example, strings
+            are immutable. We refer to values of these types as "primitive values". If we save a primitive value to a
+            variable, the value is saved directly on the variable access.
+          </dd>
+          <dd>
+            'new' constructor keyword: This way we can see the primitive values' methods and properties too.
+          </dd>
+          <dd>Stack:
+            <ul>
+              <li>Primitive values and references</li>
+              <li>Size is known at compile time</li>
+              <li>Allocates a fixed amount of memory</li>
+            </ul>
+          </dd>
+          <dt>Reference types - Everything in JS is an Object.</dt>
+          <dd>
+            In computer science, an object is a value in memory which is possibly referenced by an identifier. If an
+            object is created and not referenced by any identifier, it is considered unreachable (or garbage), and the
+            memory occupied by the object can be reclaimed. If we save a reference value to a variable, the value is
+            saved on the variable access, but the value itself is saved on the heap.
+          </dd>
+          <dd>Heap:
+            <ul>
+              <li>Objects and functions</li>
+              <li>Size is known at run time</li>
+              <li>No limit per object</li>
+            </ul>
+          </dd>
+        </dl>
       </details>
 
       <details>
-        <summary>Functions</summary>
-        <p>In JavaScript every function is an object. An object is a collection of key:value pairs. If a value is a
-          primitive (number, string, boolean), or another object, the value is considered a property. If a value is a
-          function, it is called a 'method'.</p>
-        <p>Within the scope of an object, a function is referred to as a method of that object. It is invoked from the
-          object namespace 'MyObj.theMethod()'. Since we said that a function is an object, a function within a function
-          can be considered a method of that function.</p>
-        <p>You could say things like “I am going to use the save method of my object.” And "This save method accepts a
-          function as a parameter.” But you generally wouldn't say that a function accepts a method as a parameter.</p>
-        <p>We invoke method with '.', we invoke function like this: functionName();</p>
-
+        <summary>DT - Number</summary>
         <dl>
-          <dt>Parameters are properties of a function.</dt>
-          <dd>Parameters (if any) define the method signature.</dd>
-          <dt>Arguments are properties of a particular call to a function.</dt>
-          <dd>Arguments are values passed into a function.</dd>
+          <dt>Number.properties</dt>
+          <dd>
+            <code>Number.MAX_VALUE</code> - The largest possible value a number in JavaScript can have.
+          </dd>
+          <dd>
+            <code>Number.MIN_VALUE</code> - The smallest possible value a number in JavaScript can have.
+          </dd>
+          <dd>
+            <code>Number.POSITIVE_INFINITY</code> - Represents infinity (returned on overflow).
+          </dd>
+          <dd>
+            <code>Number.NEGATIVE_INFINITY</code> - Represents negative infinity (returned on overflow).
+          </dd>
+          <dd>
+            <code>Number.NaN</code> - Represents a "Not-a-Number" value.
+          </dd>
+          <dd>
+            <code>Number.EPSILON</code> - Represents the difference between 1 and the smallest floating point number
+            greater than 1.
+          </dd>
+          <dd>
+            <code>Number.MIN_SAFE_INTEGER</code> - The minimum safe integer in JavaScript (-(2^53 - 1)).
+          </dd>
+          <dd>
+            <code>Number.MAX_SAFE_INTEGER</code> - The maximum safe integer in JavaScript ((2^53 - 1)).
+          </dd>
+          <dt>DT - Math.properties</dt>
+          <dd>
+            <code>Math.PI</code> - Returns PI (3.141592653589793).
+          </dd>
+          <dd>
+            <code>Math.E</code> - Returns Euler's number (2.718281828459045).
+          </dd>
+          <dd>
+            <code>Math.LN2</code> - Returns the natural logarithm of 2 (1.6931471805599453).
+          </dd>
+          <dd>
+            <code>Math.LN10</code> - Returns the natural logarithm of 10 (2.302585092994046).
+          </dd>
+          <dd>
+            <code>Math.LOG2E</code> - Returns base 2 logarithm of E (1.4426950408889634).
+          </dd>
+          <dd>
+            <code>Math.LOG10E</code> - Returns base 10 logarithm of E (0.4342944819032518).
+          </dd>
+          <dd>
+            <code>Math.SQRT1_2</code> - Returns the square root of 1/2 (0.7071067811865476).
+          </dd>
+          <dd>
+            <code>Math.SQRT2</code> - Returns the square root of 2 (1.4142135623730951).
+          </dd>
+          <dt>Operators</dt>
+          <dd>
+            Arithmetic operators expression order: BIDMAS
+          </dd>
+          <dd>
+            Modulo operator (%) - Returns the division remainder.
+          </dd>
+          <dd>
+            Increment / Decrement operators
+          </dd>
+          <dd>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence"
+              target="_blank" rel="noopener noreferrer" title="Opens in a new web-browser-tab" aria-label="MDN">Operator
+              precedence</a>
+          </dd>
+          <dt>DT - BigInt</dt>
+        </dl>
+      </details>
+
+      <details>
+        <summary>DT - String</summary>
+        <dl>
+          <dd>
+            Concatenation operator (+) - Combines the text of two strings and returns a new string.
+          </dd>
+          <dt>JS is a zero based language</dt>
+          <dt><code>for...of</code> loop</dt>
+          <dd>
+            Iterates over the characters of the string.
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>DT - Boolean</summary>
+        <ul>
+          <li>Truthy & Falsy values</li>
+          <li>Comparison operators</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>DT - Symbol</summary>
+        <p>Two symbols (with same value) in two variables can be equal only if we made it with variable chaining.</p>
+      </details>
+
+      <details>
+        <summary>DT - RegExp</summary>
+        <dl>
+          <dt>Cheatsheet</dt>
+          <dd>
+            <code>/Sable/</code>: input matches with any text, which includes the word 'Sable'.
+          </dd>
+          <dd>
+            <code>/^Sable$/</code>: input matches with the word 'Sable' only.
+          </dd>
+          <dd>
+            <code>/[a-z]{,10}/</code>: input matches if it finds letters in it and length maximum is 10 characters.
+          </dd>
+          <dd>
+            <code>/^[a-z]$/</code>: input matches with a single character between a-z.
+          </dd>
+          <dd>
+            <code>/^[A-Z]$/</code>: input matches with a single character between A-Z.
+          </dd>
+          <dd>
+            <code>/^[a-zA-Z]$/</code>: input matches with a single character between a-z or A-Z.
+          </dd>
+          <dd>
+            <code>/^[a-zA-Z0-9]$/</code>: input matches with a single character a-z or A-Z or 0-9.
+          </dd>
+          <dd>
+            <code>/^[a-zA-Z0-9]{6,10}$/</code>: input matches with 6 to 10 characters long a-z or A-Z or 0-9.
+          </dd>
+          <dd>
+            <code>/^.{4,}$/</code>: input matches with any character '.' at least with 4 characters.
+          </dd>
+          <dd>
+            <code>/^.{4,7}$/</code>: input matches with any character '.' at least with 4 characters and maximum with 7
+            characters.
+          </dd>
+          <dd>
+            <code>/^(?!Sable$).{4,7}$/</code>: input matches with any character '.' at least with 4 characters and
+            maximum with 7 characters, but not with
+            the word 'Sable'.
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>DT - Date</summary>
+        <dl>
+          <dt>Timestamps</dt>
+          <dd>
+            <code>new Date(milliseconds in number)</code> - Creates a new date object with the specified date and time.
+          </dd>
+          <dd>
+            <code>Date.now();</code> - Returns the number of milliseconds since January 1, 1970 00:00:00 UTC.
+          </dd>
+          <dd>
+            <code>Date.parse();</code> - Parses a string representation of a date, and returns the number of
+            milliseconds since January 1, 1970 00:00:00 UTC.
+          </dd>
+        </dl>
+        <dl>
+          <dt><a href="https://date-fns.org/v2.29.2/docs/format" target="_blank" rel="noopener noreferrer"
+              title="Opens in a new web-browser-tab" aria-label="Date-fns">Date-fns library</a></dt>
+          <dd>
+            <code>dateFns.isToday(varHoldsDateObj)</code>: returns boolean. If I would put millisecond numbers in the ()
+            at the declaration of now, it would be false.
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Conditionals</summary>
+        <dl>
+          <dt><code>if / else</code> conditional statement</dt>
+          <dd>
+            Ternary operator
+          </dd>
+          <dd>
+            Logical operators:
+            <ul>
+              <li><code>||</code> - OR</li>
+              <li><code>&&</code> - AND</li>
+              <li><code>!</code> - NOT</li>
+            </ul>
+          </dd>
+          <dd>
+            Nullish coalescing operator: (<code>??</code>) - Returns its right-hand side operand when its left-hand
+            side. Cannot be used with <code>||</code> or <code>&&</code> operators (only if they are in () )!
+          </dd>
+          <dt><code>switch / case / default</code> statement</dt>
+          <dd>
+            <code>switch(today)</code>: Checking the value of the 'today' variable with strict equality (===).
+          </dd>
+          <dd>
+            We need 'break' keyword, because if the 'case' is true, it starts to run all cases below.
+          </dd>
+          <dd>
+            We can group cases together.
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Loops</summary>
+        <dl>
+          <dt><code>while</code> loop</dt>
+          <dd>The <code>do...while</code> loop is good, when I want to run a code at least once...</dd>
+          <dt><code>for(initialization, condition, step)</code> loop</dt>
+          <dd>
+            Any part of 'for' can be skipped:
+            <ul>
+              <li>Initialization (especially if its defined already);</li>
+              <li>Condition (if its always true then its an infinite loop);</li>
+              <li>Step (We can add it in the code block too)</li>
+            </ul>
+            <ul>
+              <li><code>for(;;)</code> - Infinite loop</li>
+              <li><code>for(;condition;)</code> - Infinite loop</li>
+              <li><code>for(;;step)</code> - Infinite loop</li>
+            </ul>
+          </dd>
+          <dt><code>continue</code> & <code>break</code> keywords</dt>
+          <dd>
+            A 'continue' keyword (in a conditional or loop) means: if a condition is true, 'continue' will ignore the
+            actual iteration and jump on the next iteration.
+          </dd>
+          <dd>
+            A 'break' keyword (in a conditional or loop) means: if a condition is true, we break out from the loop
+            completely and won't iterate forward.
+          </dd>
+          <dd>
+            <code>labelName</code>: - We can use a label name before a loop or conditional and we can use it with
+            'continue' or 'break' keywords to break out from multiple nested loops.
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>DT - Function</summary>
+        <dl>
+          <dt>In JavaScript every function is a special object.</dt>
+          <dd>
+            Function definitions:
+            <ul>
+              <li>Function declaration</li>
+              <li>Function expression</li>
+              <li>
+                <data value="Immediately Invoked Function Expression">
+                  <dfn>
+                    <abbr title="Immediately Invoked Function Expression">IIFE</abbr>
+                  </dfn>
+                </data>
+              </li>
+              <li>Arrow function*</li>
+              <li>Callback function</li>
+            </ul>
+          </dd>
         </dl>
 
-        <p>When you define a function, the variables that represent the values that will be passed to it for processing
-          are called parameters. However, when you use a function, the value you pass to it is called an argument.</p>
+        <dl>
+          <dt>Parameters vs. Arguments</dt>
+          <dd>
+            Parameters (if any) are properties of a function which define the method signature.
+          </dd>
+          <dd>
+            Arguments are values passed into a particular call to a function.
+          </dd>
+          <dd>
+            When you define a function, the variables that represent the values that will be passed to it for processing
+            are called parameters. However, when you use a function, the value you pass to it is called an argument.
+          </dd>
+          <dt>The <code>return</code> keyword</dt>
+          <dd>
+            Without a (or with an empty) return keyword, the function will return 'undefined'. When the execution
+            reaches the 'return', the function stops, and the value is returned to the calling code.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>*Arrow functions</dt>
+          <dd>
+            When we have only one (no more, no less) parameter, we can leave the ().
+          </dd>
+          <dd>
+            When we have only one simple (return) line, we can leave the 'return' keyword with the {};
+          </dd>
+          <dd>
+            We can't use 'this' keyword in arrow functions.
+          </dd>
+          <dd>
+            We can't use 'new' keyword in arrow functions.
+          </dd>
+          <dd>
+            We can't use 'arguments' keyword in arrow functions.
+          </dd>
+          <dd>
+            We can't use 'yield' keyword in arrow functions.
+          </dd>
+          <dd>
+            We can't use 'super' keyword in arrow functions.
+          </dd>
+          <dd>
+            We can't use 'prototype' keyword in arrow functions.
+          </dd>
+          <dd>
+            We can't use 'new.target' keyword in arrow functions.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Closures</dt>
+          <dd>
+            A closure is a function having access to the parent scope, even after the parent function has closed.
+          </dd>
+          <dd>
+            The function keeps the access to the outer variable even after the outer function has returned.
+          </dd>
+          <dd>
+            <strong>Check the code and the console</strong>
+            If we return a function in a closure it will be invoked too when we call the parent function (closure()) and
+            it will return the value of the 'num' variable (num++).
+          </dd>
+          <dd>
+            <strong>Check the code and the console</strong>
+            The 'add' function is a closure, because it has access to the outer variable 'num' even after the outer
+            function 'closure' has returned (add() four times)
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Recursion</dt>
+          <dd>
+            The act of a function calling itself, recursion is used to solve problems that contain smaller sub-problems.
+            A recursive function can receive two inputs: a base case (ends recursion) or a recursive case (resumes
+            recursion).
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Rest operator</dt>
+          <dd>
+            The rest of the parameters can be included in the function definition by using three dots …​ followed by the
+            name of the array that will contain them. The dots literally mean “gather the remaining parameters into an
+            array”.
+          </dd>
+          <dd>
+            We can choose to get the first parameters as variables, and gather only the rest
+            <code>(parameter1, parameter2, ...rest)</code>.
+          </dd>
+          <dt>Spread operator</dt>
+          <dd>
+            Spread syntax …​ allows an iterable, such as an array or string, to be expanded in places where zero or more
+            arguments are expected.
+          </dd>
+          <dd>
+            When …​array is used in the function call, it “expands” an iterable object array into the list of arguments.
+          </dd>
+          <dt><code>arguments</code> variable</dt>
+          <dd>
+            In old times, rest parameters did not exist in the language, and using arguments was the only way to get all
+            arguments of the function. And it still works, we can find it in the old code. But the downside is that
+            although arguments is both array-like and iterable, it’s not an array. It does not support array methods.
+          </dd>
+        </dl>
       </details>
 
       <details>
-        <summary>Array Buffer</summary>
-        <p>
-          In JavaScript, an ArrayBuffer is an object that represents a generic, fixed-length raw binary data buffer. It
-          is part of the TypedArray and DataView interfaces, which provide a way to work with binary data in a more
-          controlled manner than the traditional JavaScript arrays.
-        </p>
+        <summary>DT - Array</summary>
 
         <dl>
+          <dt>Spread syntadx</dt>
+          <dd>
+            Spread syntax …​ allows an iterable, such as an array expression or string, to be expanded in places where
+            zero or more arguments (for function calls) or elements (for array literals) are expected, or an object
+            expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>DT - Array Buffer</dt>
+          <dd>
+            In JavaScript, an ArrayBuffer is an object that represents a generic, fixed-length raw binary data buffer.
+            It
+            is part of the TypedArray and DataView interfaces, which provide a way to work with binary data in a more
+            controlled manner than the traditional JavaScript arrays.
+          </dd>
+          <dd>
+            In summary, ArrayBuffer provides a way to work with binary data in a more controlled and efficient manner in
+            JavaScript, allowing for low-level manipulation and interoperability with other technologies.
+          </dd>
           <dt>Type Conversion:</dt>
-          <dd>ArrayBuffer itself is not meant for direct manipulation, but rather as a low-level foundation for other
-            more specific views. You can use TypedArrays or DataViews to interact with the data in the buffer. For
-            example:</dd>
+          <dd>
+            ArrayBuffer itself is not meant for direct manipulation, but rather as a low-level foundation for other more
+            specific views. You can use TypedArrays or DataViews to interact with the data in the buffer. For example:
+          </dd>
           <dt>Use case #1 - Low-Level Data Manipulation</dt>
-          <dd>ArrayBuffer is useful when you need to work with binary data directly, like parsing or manipulating
-            network protocols, file formats, or any other binary data.</dd>
+          <dd>
+            ArrayBuffer is useful when you need to work with binary data directly, like parsing or manipulating network
+            protocols, file formats, or any other binary data.
+          </dd>
           <dt>Use case #2 - Data Transfer:</dt>
-          <dd>It's often used in APIs that involve transferring binary data, such as the Fetch API, WebSockets, or
-            WebGL.</dd>
+          <dd>
+            It's often used in APIs that involve transferring binary data, such as the Fetch API, WebSockets or WebGL.
+          </dd>
           <dt>Use case #3 - Efficient Memory Handling:</dt>
-          <dd>ArrayBuffer allows for efficient memory handling, as it represents a fixed-size buffer and can be used for
-            efficient data manipulation without the overhead of JavaScript arrays.</dd>
+          <dd>
+            ArrayBuffer allows for efficient memory handling, as it represents a fixed-size buffer and can be used for
+            efficient data manipulation without the overhead of JavaScript arrays.
+          </dd>
           <dt>Use case #4 - Interoperability:</dt>
-          <dd>It's useful when dealing with other web technologies or external libraries that work with binary data,
-            providing a common interface for data exchange.</dd>
+          <dd>
+            It's useful when dealing with other web technologies or external libraries that work with binary data,
+            providing a common interface for data exchange.
+          </dd>
         </dl>
 
-        <p>In summary, ArrayBuffer provides a way to work with binary data in a more controlled and efficient manner in
-          JavaScript, allowing for low-level manipulation and interoperability with other technologies.</p>
+        <dl>
+          <dt>DT - Set</dt>
+          <dt>DT - WeakSet</dt>
+          <dd>
+            A WeakSet is a collection of objects where object references are held weakly.
+          </dd>
+          <dd>
+            It only accepts objects as keys, and these object references are weakly held, meaning they don't prevent
+            garbage collection if the object is not used elsewhere.
+          </dd>
+          <dd>
+            It doesn't have the size property or methods to iterate over its elements, making it less versatile compared
+            to Set.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Garbage collection</dt>
+          <dd>
+            Garbage collection is the process by which a programming language automatically reclaims memory that is no
+            longer in use by the program. In JavaScript, memory is managed automatically by the JavaScript engine. When
+            objects are created, they are allocated memory. When they are no longer reachable or referenced, they become
+            eligible for garbage collection.
+          </dd>
+          <dd>
+            JavaScript engines, like V8 in Chrome or SpiderMonkey in Firefox, use sophisticated algorithms and
+            optimizations to perform garbage collection efficiently without causing noticeable pauses in the
+            application.
+          </dd>
+          <dd>
+            The most common algorithm used for garbage collection in JavaScript is the Mark and Sweep algorithm.
+            Here's a simplified explanation of how it works:
+
+            <ul>
+              <li>Mark: The garbage collector starts from the root of the application (global object or objects
+                referenced from it) and marks all the objects it can reach.</li>
+              <li>Sweep: It then sweeps through the memory, freeing up the space occupied by objects that were not
+                marked in the previous step, as they are considered unreachable and can be safely removed.</li>
+            </ul>
+          </dd>
+        </dl>
       </details>
 
       <details>
-        <summary>Garbage collection</summary>
-
-        <p>Garbage collection is the process by which a programming language automatically reclaims memory that is no
-          longer in use by the program. In JavaScript, memory is managed automatically by the JavaScript engine. When
-          objects are created, they are allocated memory. When they are no longer reachable or referenced, they become
-          eligible for garbage collection.</p>
-
+        <summary>DT - Object</summary>
         <dl>
-          <dt>The most common algorithm used for garbage collection in JavaScript is the Mark and Sweep algorithm.
-            Here's a simplified explanation of how it works:</dt>
-          <dd>Mark: The garbage collector starts from the root of the application (global object or objects referenced
-            from it) and marks all the objects it can reach.</dd>
-          <dd>Sweep: It then sweeps through the memory, freeing up the space occupied by objects that were not marked in
-            the previous step, as they are considered unreachable and can be safely removed.</dd>
+          <dt>An object literal is a collection of key:value pairs</dt>
+          <dd>
+            . notation => using properties & methods:
+            <ul>
+              <li>A key identifier can be string ('multi word'), symbol or even some keywords (like for, let, return),
+                other types will be converted to string.</li>
+              <li>We can use variables as keys (if the variable name is the same as the key name we can use shorthand
+                syntax 'id,' instead of 'id: id,').</li>
+              <li>We can use the dot notation to get the value of a key.</li>
+              <li>We can use the dot notation to add new key/value pairs (if we add only key the value will be
+                undefined).</li>
+              <li>We can use the dot notation to add functions too (methods).</li>
+              <li>We can use the dot notation to change the value of a key.</li>
+              <li>We can use the dot notation to 'delete' (operator) a key/value pair.</li>
+              <li>We can use the dot notation to invoke method (function) on the object.</li>
+            </ul>
+          </dd>
+          <dd>
+            [] notation & computed properties
+            <ul>
+              <li>We can use the [] notation to get the value of a key (<code>object[key]</code>).</li>
+              <li>We can use the [] notation to get the value of a key (<code>object[indexNumber]</code>).</li>
+              <li>We can use the [] notation to add new key/value pairs (if we add only key the value will be
+                undefined).</li>
+              <li>We can use the [] notation to change the value of a key (<code>object[key]</code>).</li>
+              <li>We can use the [] notation to 'delete' (operator) a key/value pair</li>
+              <li>We can use the [] notation to invoke method (function) on the object
+                (<code>object['function']()</code>).</li>
+            </ul>
+          </dd>
+          <dd>
+            We also can combine the notations.
+          </dd>
+          <dt>Functions vs. Methods</dt>
+          <dd>
+            If a value is a primitive (number, string, boolean), or another object, the value is considered a property.
+            If a value is a function, it is called a 'method'.
+          </dd>
+          <dd>
+            Within the scope of an object, a function is referred to as a method of that object. It is invoked from the
+            object namespace '<code>MyObj.theMethod()</code>'. Since we said that a function is an object, a function
+            within a function can be considered a method of that function.
+          </dd>
+          <dd>
+            You could say things like “I am going to use the save method of my object.” And "This save method accepts a
+            function as a parameter.” But you generally wouldn't say that a function accepts a method as a parameter.
+          </dd>
+          <dd>
+            We invoke method with '.', we invoke function like this: functionName();
+          </dd>
+          <dt>[native code] or [object Object]</dt>
+          <dd>
+            When we try to present an object in string format we should copy it right the way...
+          </dd>
+          <dt>Iterations</dt>
+          <dd>
+            Object integer properties are sorted, others appear in creation order.
+          </dd>
+          <dd>
+            The 'in' operator returns true if the specified property is in the specified object or its prototype chain.
+          </dd>
+          <dd>
+            <code>for...in</code> loop iterates over the enumerable properties of an object, in arbitrary order.
+          </dd>
+          <dd>
+            Object chainable methods:
+            <ul>
+              <li>Object.entries(object): returns an array of Array(2)-s with the key, value pairs.</li>
+              <li>Object.keys(object) returns an array of keys.</li>
+              <li>Object.values(object) returns an array of values.</li>
+            </ul>
+          </dd>
+          <dt>Cloning</dt>
+          <dd>
+            Use lodash or JSON.stringify(JSON.parse) if its necessary.
+          </dd>
+          <dt>Methods</dt>
+          <dd>
+            <code>object.hasOwnProperty('key')</code>: Returns a boolean indicating whether the object has the specified
+            property as its own property (as opposed to inheriting it (in returns true for inherited properties too)).
+          </dd>
+          <dd>
+            <code>Object.freeze(object)</code>: returns the same object that was passed in. A frozen object can no
+            longer be changed: new properties cannot be added, existing properties cannot be removed, their
+            enumerability, configurability, writability, or value cannot be changed, and the object’s prototype cannot
+            be re-assigned.
+          </dd>
+          <dd>
+            <code>Object.isFrozen(object)</code>: returns a boolean indicating whether the passed object is frozen.
+          </dd>
         </dl>
 
-        <p>JavaScript engines, like V8 in Chrome or SpiderMonkey in Firefox, use sophisticated algorithms and
-          optimizations to perform garbage collection efficiently without causing noticeable pauses in the application.
-        </p>
+        <dl>
+          <dt>DT - Map</dt>
+          <dd>
+            Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows
+            keys of any type and Map remembers the original insertion order of the keys
+          </dd>
+          <dt>Properties & Methods</dt>
+          <dd>
+            <code>map.set(key, value)</code> stores the value by the key.
+          </dd>
+          <dd>
+            <code>map.size</code> returns the current element count.
+          </dd>
+          <dd>
+            <code>map.get(key)</code> returns the value by the key, undefined if key doesn’t exist in map.
+          </dd>
+          <dd>
+            <code>map.has(key)</code> returns true if the key exists, false otherwise.
+          </dd>
+          <dd>
+            <code>map.delete(key)</code> removes the value by the key.
+          </dd>
+          <dd>
+            <code>map.clear()</code> removes everything from the map.
+          </dd>
+          <dt>Iterations</dt>
+          <dd>
+            <code>map.keys()</code> returns an iterable for keys.
+          </dd>
+          <dd>
+            <code>map.values()</code> returns an iterable for values.
+          </dd>
+          <dd>
+            <code>map.entries()</code> returns an iterable for entries [key, value], it’s used by default in for...of.
+          </dd>
+          <dd>
+            <code>map.forEach()</code> allows to run a function for every element.
+          </dd>
+          <dt>Type Conversion</dt>
+          <dd>
+            <code>Object.fromEntries(map)</code> converts the map to a plain object, using <code>Array.from(map)</code>
+            internally.
+          </dd>
+          <dd>
+            new Map(Object.entries(objectFromMap)) converts the object to a map, by making a key/value pair for each
+            element.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>DT - WeakMap</dt>
+          <dd>
+            Keys must be objects, not primitive values.
+          </dd>
+          <dd>
+            Keys in WeakMap are garbage collected.
+          </dd>
+          <dd>
+            WeakMap is not iterable.
+          </dd>
+          <dd>
+            WeakMap has no size property.
+          </dd>
+          <dd>
+            WeakMap has no clear method.
+          </dd>
+          <dd>
+            If we use an object as the key in it, and there are no other references to that object – it will be removed
+            from memory (and from the map) automatically.
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>
+          <data value="Object Oriented Programming">
+            <dfn>
+              <abbr title="Object-Oriented-Programming">OOP</abbr>
+            </dfn>
+          </data>
+        </summary>
+
+        <dl>
+          <dt>this operator keyword</dt>
+          <dd>
+            In a simpler way we can say that “this” is a reference to the object that is executing the current running
+            function. So, we can use 'this' keyword to refer to the owner object itself (only in regular functions).
+          </dd>
+          <dd>
+            We need to 'return this;' if we don't want get back undefined.'this' will go out to the context and returns
+            the 'object'.
+          </dd>
+          <dd>
+            The 'this' keyword is not assigned a value until a function where it is defined is actually called.
+          </dd>
+          <dd>
+            Method call: the 'this' variable points to the object that is calling the method.
+          </dd>
+          <dd>
+            Default binding in a regular function call: the 'this' keyword points at the global object, (the window
+            object, in the browser, but in 'use strict' mode it returns undefined).
+          </dd>
+          <dd>
+            All functions have <code>func.call(context object for this, ...args)</code> and
+            <code>func.apply(context object for this, args)</code> methods. They both take, as their first parameter, an
+            object to use for the 'this', and then invoke the function with that 'this' specified.
+          </dd>
+          <dd>
+            Implicit & Explicit binding of 'this' returns the object that is calling the method.
+          </dd>
+          <dt>new operator keyword</dt>
+          <dd>
+            The 'new' keyword creates a new empty object {}.
+          </dd>
+          <dd>
+            It binds the value of 'this' to the new empty object.
+          </dd>
+          <dd>
+            It calls the constructor function to 'build' the object.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Every object in JS has a prototype object</dt>
+          <dd>
+            All objects inherit their methods and properties from their prototype.
+          </dd>
+          <dd>
+            We can add properties and methods to the constructor function itself.
+            '<code>object.constructor.method();</code>' (We don't need to write constructor when we use properties and
+            methods.)
+          </dd>
+          <dd>
+            We can add properties and methods to the object itself:
+            <code>object.method();</code>
+          </dd>
+          <dd>
+            We can add properties and methods to the prototype itself.
+            <code>object.__proto__.method();</code> (We don't need to write <code>__proto__</code> when we use
+            properties and methods.)
+          </dd>
+          <dd>
+            Prototype chain: The prototype of an object would also have a prototype object. This continues until we
+            reach the top level when there is no prototype object.
+          </dd>
+          <dd>
+            The prototype of an object is accessible using the <code>__proto__</code> property.
+          </dd>
+          <dt>instanceof operator keyword</dt>
+          <dd>
+            The 'instanceof' operator tests whether the prototype property of a constructor appears anywhere in the
+            prototype chain of an object.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Classes</dt>
+          <dd>
+            Classes are a special functions that are defined using the class keyword.
+          </dd>
+          <dd>
+            Classes are not hoisted.
+          </dd>
+          <dd>
+            Classes are executed in strict mode.
+          </dd>
+          <dd>
+            Classes can only contain methods, not data properties.
+          </dd>
+          <dd>
+            Classes can use the 'extends' keyword to inherit from another class's prototype.
+          </dd>
+          <dd>
+            The super keyword used inside a child class denotes its parent class. For example 'super(name)' inside the
+            'class Child' refers to the 'class Parent'. Hence, when the constructor() of 'class Child' is called, it
+            also calls the constructor() of the 'class Parent' which assigns a 'name' property (argument) to it.
+          </dd>
+          <dd>
+            Classes can use the 'static' keyword to define static methods.
+          </dd>
+          <dd>
+            'get' & 'set' keywords are used to define getters and setters respectively. Getter methods are used to
+            access the properties of an object. Setter methods are used to change the values of an object.
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Async.hronous</summary>
+        <dl>
+          <dt><code>setTimeout(() => {}, 3000)</code> method</dt>
+          <dd>
+            A callback function which fires after 3000 ms (3 seconds => by its time number, its called) of the page
+            load. The Async functions jumping out and waiting until the page loads and their time. Until then the other
+            sync codes will run.
+          </dd>
+          <dt><code>setInterval(() => {... , clearInterval(timer)}, 1250)</code> method</dt>
+          <dd>
+            This callback function wouldn't stop without the clearInterval() method.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Sync vs. Async programming</dt>
+          <dd>
+            Asynchronous programming is a technique that enables your program to start a potentially long-running task
+            and still be able to be responsive to other events while that task runs, rather than having to wait until
+            that task has finished. Once that task has finished, your program is presented with the result.
+          </dd>
+          <dt>Event loop</dt>
+          <dd>
+            Async is multi-thread, which means operations or programs can run in parallel. Sync is single-thread, so
+            only one operation or program will run at a time.
+          </dd>
+          <dd>
+            Async is non-blocking, which means it will send multiple requests to a server. Sync is blocking - it will
+            only send the server one request at a time and will wait for that request to be answered by the server.
+          </dd>
+          <dd>
+            Async increases throughput because multiple operations can run at the same time. Sync is slower and more
+            methodical.
+          </dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>
+          <data value="Application Programming Interface">
+            <dfn>
+              <abbr title="Application Programming Interface">API</abbr>
+            </dfn>
+          </data>
+
+          <data value="Document Object Modell">
+            <dfn>
+              <abbr title="Document Object Model">DOM</abbr>
+            </dfn>
+          </data>
+        </summary>
+      </details>
+
+      <details>
+        <summary>
+          API
+          <data value="">
+            <dfn>
+              <abbr title="">BOM</abbr>
+            </dfn>
+          </data>
+        </summary>
+      </details>
+
+      <details>
+        <summary>
+          TS
+        </summary>
       </details>
     </article>
 

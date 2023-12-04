@@ -1,88 +1,104 @@
 `use strict`;
 
 export default function datatypeof() {
+  /* Data-types & typeof keyword */
+
   const automatic = undefined;
-  console.log(automatic, typeof automatic);
+  console.log(automatic);
+  console.log(typeof automatic);
 
   const nullObject = null;
-  console.log(nullObject, typeof nullObject);
+  console.log(nullObject);
+  console.log(typeof nullObject);
 
   const number = NaN;
   const Num = new Number();
-  console.log(number, typeof number);
-  console.log(Num, typeof Num);
+  console.log(number);
+  console.log(typeof number);
+  console.log(Num);
+  console.log(typeof Num);
 
   const bigint = BigInt(0n);
   const bigInt = BigInt.prototype;
-  console.log(bigint, typeof bigint);
-  console.log(bigInt, typeof bigInt);
+  console.log(bigint);
+  console.log(typeof bigint);
+  console.log(bigInt);
+  console.log(typeof bigInt);
 
   const mathObject = Math;
-  console.log(mathObject, typeof mathObject);
+  console.log(mathObject);
+  console.log(typeof mathObject);
 
-  const string = `${'' + ''}`;
+  const string = `${"' '" + '" "'}`;
   const str = new String();
-  console.log(string, typeof string);
-  console.log(str, typeof str);
-
-  const symbol = Symbol();
-  const sym = Symbol.prototype;
-  console.log(symbol, typeof symbol);
-  console.log(sym, typeof sym);
-
-  const regex = new RegExp();
-  console.log(regex, typeof regex);
+  console.log(string);
+  console.log(typeof string);
+  console.log(str);
+  console.log(typeof str);
 
   const boolean = true || false;
   const bool = new Boolean();
-  console.log(boolean, typeof boolean);
-  console.log(bool, typeof bool);
+  console.log(boolean);
+  console.log(typeof boolean);
+  console.log(bool);
+  console.log(typeof bool);
+
+  const symbol = Symbol();
+  const sym = Symbol.prototype;
+  console.log(symbol);
+  console.log(typeof symbol);
+  console.log(sym);
+  console.log(typeof sym);
+
+  const regex = new RegExp();
+  console.log(regex);
+  console.log(typeof regex);
 
   const date = new Date();
-  console.log(date, typeof date);
+  console.log(date);
+  console.log(Date.prototype);
+  console.log(typeof date);
 
   const func = new Function();
-  console.log(func, typeof func);
+  console.log(func);
+  console.log(typeof func);
 
   const array = new Array();
-  console.log(array, typeof array);
+  console.log(array);
+  console.log(typeof array);
 
   const set = new Set();
-  console.log(set, typeof set);
+  console.log(set);
+  console.log(typeof set);
 
   const weakSet = new WeakSet();
-  console.log(weakSet, typeof weakSet);
+  console.log(weakSet);
+  console.log(typeof weakSet);
 
   const object = new Object();
-  console.log(object, typeof object);
+  console.log(object);
+  console.log(typeof object);
 
   const map = new Map();
-  console.log(map, typeof map);
+  console.log(map);
+  console.log(typeof map);
 
   const weakMap = new WeakMap();
-  console.log(weakMap, typeof weakMap);
+  console.log(weakMap);
+  console.log(typeof weakMap);
 
-  /* Primitive */
+  /* Primitive DTs */
 
   let primitive_1 = undefined;
   let primitive_2 = primitive_1;
-
-  console.log(
-    `let primitive_1: \n`,
-    primitive_1,
-    `\n\ primitive_2 copied the 'undefined' value (let primitive_2 = primitive_1): \n`,
-    primitive_2,
-  );
+  console.log(primitive_1);
+  console.log(primitive_2);
 
   primitive_1 = null;
-  console.log(
-    `primitive_1 = null: \n`,
-    primitive_1,
-    `\n\ primitive_1 won't change the original 'undefined' copy for the primitive_2, so it stays undefined: \n`,
-    primitive_2,
-  );
+  console.log(primitive_1);
+  console.log(primitive_2);
 
-  /* Reference */
+  /* Reference (object) DTs */
 
   const reference_1 = {
     primitive_1,
@@ -90,21 +106,10 @@ export default function datatypeof() {
   };
 
   const reference_2 = reference_1;
-
-  console.log(
-    `const reference_1 = {primitive_1, primitive_2}: \n`,
-    reference_1,
-    `\n\ const reference_2 = reference_1: \n\ `,
-    reference_2,
-    `reference_2 copied reference_1 object typed variable's pointer to the stack not the value itself.`,
-  );
+  console.log(reference_1);
+  console.log(reference_2);
 
   reference_1.primitive_2 = null;
-  console.log(
-    `reference_1.primitive_2 = null: \n`,
-    reference_1,
-    `\n\ reference_1.primitive_2 changed the original 'undefined' copy for the reference_2, so its also changed to null: \n`,
-    reference_2,
-    `\n\ If we update one, it updates all and doesn't matter that if we would change the value at 'reference_2' either... same result because of the HEAP.`,
-  );
+  console.log(reference_1);
+  console.log(reference_2);
 }
