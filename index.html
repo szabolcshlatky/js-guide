@@ -1135,6 +1135,354 @@
             methodical.
           </dd>
         </dl>
+
+        <dl>
+          <dt>Callbacks</dt>
+          <dd>
+            That’s called a “callback-based” style of asynchronous programming. A function that does something
+            asynchronously should provide a callback argument where we put the function to run after it’s complete.
+          </dd>
+          <dd>
+            Lot of callbacks in a row is called “callback hell”.
+          </dd>
+          <dt>DT - Promises</dt>
+          <dd>
+            Promise is a built-in API. Parameter (function) resolve() works when the request successful, reject() works
+            when the request has error.
+          </dd>
+          <dd>
+            Promise has 4 states: pending, fulfilled, rejected, settled.
+            <ul>
+              <li>pending: initial state, neither fulfilled nor rejected.</li>
+              <li>fulfilled: The <code>then()</code> method is used with the callback when the promise is successfully
+                fulfilled or
+                resolved.</li>
+              <li>rejected: The <code>catch()</code> method is used with the callback when the promise is rejected or if
+                an error
+                occurs.</li>
+              <li>
+                settled: The <code>finally()</code> method gets executed when the promise is either resolved
+                successfully or
+                rejected. A finally handler has no arguments. In finally we don’t know whether the promise is successful
+                or not. A finally handler “passes through” the result or error to the next suitable handler.
+              </li>
+            </ul>
+          </dd>
+          <dd>
+            Promises are useful when you have to handle more than one asynchronous task, one after another. For that, we
+            use promise chaining.
+          </dd>
+          <dd>
+            “Promisification” is a long word for a simple transformation. It’s the conversion of a function that accepts
+            a callback into a function that returns a promise. Such transformations are often required in real-life, as
+            many functions and libraries are callback-based. But promises are more convenient, so it makes sense to
+            promisify them.
+          </dd>
+          <dt>async / await</dt>
+          <dd>
+            We use the async keyword with a function to represent that the function is an asynchronous function. The
+            async function returns a promise.
+          </dd>
+          <dd>
+            The 'await' keyword stops the value assign to a variable until the promise resolves or rejected.
+          </dd>
+          <dd>
+            Since this function returns a promise, you can use the chaining method then() to get the result.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>
+            <data value="XMLHttpRequest">
+              <dfn>
+                <abbr title="XMLHttpRequest">DT - XHR</abbr>
+              </dfn>
+            </data>
+          </dt>
+          <dd>
+            'readystatechange' event goes through the 4 phases of the http request. The readyState returns the request's
+            phase as a number. We only can work with 4 because at 0-3 the request is not ready. 404 error is not a good
+            status, 200 is. Other events:
+
+            <ul>
+              <li>
+                'load' event is fired when the request is successfully completed.
+              </li>
+              <li>
+                'error' event is fired when the request is failed.
+              </li>
+              <li>
+                'abort' event is fired when the request is aborted.
+              </li>
+              <li>
+                'timeout' event is fired when the request is timed out.
+              </li>
+              <li>
+                'loadstart' event is fired when the request starts.
+              </li>
+              <li>
+                'loadend' event is fired when the request is finished.
+              </li>
+              <li>
+                'progress' event is fired when the request is in progress.
+              </li>
+            </ul>
+          </dd>
+          <dd>
+            <strong>In the code example...</strong>
+            <pre>
+            request.open(
+              `POST`, resource
+            /* `<a href="https://jsonplaceholder.typicode.com/todos/" target="_blank" rel="noopener noreferrer"
+            title="Opens in a new web-browser-tab" aria-label="json">https://jsonplaceholder.typicode.com/todos/</a>` - Absolute or Relative URL `scripts/todos.json` */ , /* OPTIONAL */ [async = true, user = ``, password = ``]
+            ); // 'GET' or 'POST' is the data request type and the URL is the source to get data from.
+              
+            request.send( [body] );
+            </pre>
+          </dd>
+
+          <dt>Fetch API</dt>
+          <dd>
+            Syntax: <code>let promise = fetch(url, {/* optional */ options map like object})</code>
+            <ul>
+              <li>url – the URL to access.</li>
+              <li>options – optional parameters: method, headers etc. Without options, this is a simple GET request,
+                downloading the contents of the url.</li>
+            </ul>
+
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>
+            <data value="Uniform Resource Identifier">
+              <dfn>
+                <abbr title="Uniform Resource Identifier">URI</abbr>
+              </dfn>
+            </data>
+          </dt>
+          <dd>
+            URI is a string of characters used to identify a name or a resource on the Internet. A URI identifies a
+            resource either by location, or a name, or both. A URI has two specializations known as URL and URN.
+          </dd>
+          <dt>
+            <data value="Uniform Resource Locator">
+              <dfn>
+                <abbr title="Uniform Resource Locator">URL</abbr>
+              </dfn>
+            </data>
+          </dt>
+          <dd>
+            URL is a subset of the Uniform Resource Identifier (URI) that specifies where an identified resource is
+            available and the mechanism for retrieving it. A URL defines how the resource can be obtained. It does not
+            have to be a HTTP(S) URL (http://), a URL can also start with ftp:// or smb://, specifying the protocol
+            that’s used to get the resource.
+          </dd>
+          <dt>
+            <data value="Uniform Resource Name">
+              <dfn>
+                <abbr title="Uniform Resource Name">URN</abbr>
+              </dfn>
+            </data>
+          </dt>
+          <dd>
+            URN is a Uniform Resource Identifier (URI) that uses the URN scheme, and does not imply availability of the
+            identified resource. Both URNs (names) and URLs (locators) are URIs, and a particular URI may be both a name
+            and a locator at the same time.
+          </dd>
+          <dt>
+            <data value="Extensible Markup Language">
+              <dfn>
+                <abbr title="Extensible Markup Language">XML</abbr>
+              </dfn>
+            </data>
+          </dt>
+          <dd>
+            XML (Extensible Markup Language) is used to describe data. The XML standard is a flexible way to create
+            information formats and electronically share structured data via the Internet. XML documents have a
+            hierarchical structure and can conceptually be interpreted as a tree structure, called an XML tree. XML
+            documents must contain a root element (one that is the parent of all other elements). All elements in an XML
+            document can contain sub elements, text and attributes.
+          </dd>
+          <dd>
+            How is an XML file structured (check the HTML code)?
+            <pre>
+            <code>&lt;?xml version="1.0" encoding="UTF-8"?></code>
+             <root>
+               <users>
+                 <id>1</id>
+                 <name>John</name>
+                 <age>20</age>
+               </users>
+               <users>
+                 <id>2</id>
+                 <name>Robert</name>
+                 <age>30</age>
+               </users>
+               <users>
+                 <id>1</id>
+                 <name>Oliver</name>
+                 <age>25</age>
+               </users>
+              </root>
+            </pre>
+          </dd>
+          <dt>
+            <data value="JavaScript Object Notation">
+              <dfn>
+                <abbr title="JavaScript Object Notation">JSON</abbr>
+              </dfn>
+            </data>
+          </dt>
+          <dd>
+            JSON, or JavaScript Object Notation, is a simple machine-readable data-interchange format, which makes
+            constructing API applications in JavaScript easy (though it can be used from other languages too!).
+            <br />
+            Why JSON is used in API?
+            <br />
+            It did not require the rather inconvenient “data binding” and “data serialization” steps that were
+            notoriously difficult when using XML-based APIs. Instead, JSON allowed APIs to represent structured data in
+            a way that simply was a better fit for the conceptual universe that most developers live in.
+          </dd>
+          <dt>JSON vs. XML</dt>
+          <dd>
+            JSON is faster because it is designed specifically for data interchange. JSON encoding is terse, which
+            requires fewer bytes for transit. JSON parsers are less complex, which requires less processing time and
+            memory overhead. XML is slower because it is designed for a lot more than just data interchange.
+          </dd>
+          <dt>
+            <data value="Hypertext Transfer Protocol">
+              <dfn>
+                <abbr title="HyperText Transfer Protocol">HTTP</abbr>
+              </dfn>
+            </data>
+          </dt>
+          <dd>
+            HTTP is an application layer protocol in the Internet protocol suite model for distributed, collaborative,
+            hypermedia information systems. HTTP isclient-server data transfer structurede Web.
+          </dd>
+          <dd>
+            The HTTP protocol assumes the use of a <strong>client-server data transfer structure</strong>. The client
+            application forms a request and sends it to the server, after which the server software processes this
+            request, generates a response, and sends it back to the client.
+          </dd>
+          <dd>
+            Data transmission via the HTTP protocol is carried out over TCP/IP connections. Server software usually uses
+            TCP port 80, although any other port can be used. These HTTP requests all go to either an origin server or a
+            proxy caching server, and that server will generate an HTTP response. HTTP responses are answers to HTTP
+            requests.
+          </dd>
+          <dd>
+            HTTP Method tell the server what kind of action the client wants. There are several possible methods, but
+            for RESTful APIs, the most common five are these:
+
+            <ul>
+              <li><strong>GET</strong> – used to retrieve or read a resource. If successful, the response will contain
+                the resource specified in the URL. APIs mainly deal in JSON and XML files.</li>
+              <li><strong>POST</strong> – used to create new resources, including subordinate resources to already
+                existing nouns. A successful response will contain the URL of the newly created resource.</li>
+              <li><strong>PUT</strong> – used to update an existing resource. The request will also contain the new
+                information that should replace the existing one in the resource.</li>
+              <li><strong>PATCH</strong> – like PUT, updates an existing resource, but differently. Instead of sending
+                the new data, it sends instructions on how to modify the current resource.</li>
+              <li><strong>DELETE</strong> – used to, as the name suggests, delete a resource.</li>
+            </ul>
+          </dd>
+
+          <dt>Request headers & body</dt>
+          <dd>
+            By adding <strong>headers</strong> to a request, you include meta-information, which can help the overall
+            process. For example, the <strong>Content-Type</strong> header declares the format of the data present in
+            the request’s body. If the body contains an XML file, this header is necessary to help the server understand
+            how to process the said file.
+          </dd>
+          <dd>
+            The <strong>Accept</strong> header also specifies a data format but for the response instead of the request.
+            If you need to retrieve a JSON file, for example, you’ll use the GET method and set the Accept header to
+            only accept data in JSON format. The <strong>Authorization</strong> header includes HTTP basic
+            authentication credentials. There are many more headers that you will learn later.
+          </dd>
+          <dd>
+            Request body is the part of the request which contains the information you want to send to the server. You
+            can add just about any sort of data. Just remember to specify it in the headers. For requests that
+            manipulate existing resources or create new ones, the body will contain the data for the action.
+          </dd>
+          <dd>
+            Status codes:
+
+            <ul>
+              <li><strong>100 – 199</strong> : informational responses.</li>
+              <li><strong>200 – 299</strong> : successful responses.</li>
+              <li><strong>300 – 399</strong> : redirects.</li>
+              <li><strong>400 – 499</strong> : client errors.</li>
+              <li><strong>500 – 599</strong> : server errors.</li>
+            </ul>
+          </dd>
+
+          <dt>
+            <data value="Hypertext Transfer Protocol Secure">
+              <dfn>
+                <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>
+              </dfn>
+            </data>
+          </dt>
+          <dd>
+            HTTPS is an extension of the Hypertext Transfer Protocol (HTTP).It is used for secure communication over a
+            computer network, and is widely used on the Internet. In HTTPS, the communication protocol is encrypted
+            using
+            <data value="Transport Layer Security">
+              <dfn>
+                <abbr title="Transport Layer Security">TLS</abbr>
+              </dfn>
+            </data> or, formerly,
+            <data value="Secure Sockets Layer">
+              <dfn>
+                <abbr title="Secure Sockets Layer">SSL</abbr>
+              </dfn>
+            </data>
+            The protocol is therefore also referred to as HTTP over TLS, or HTTP over SSL.
+          </dd>
+          <dd>
+            The principal motivations for HTTPS are authentication of the accessed website, and protection of the
+            privacy and integrity of the exchanged data while in transit. It protects against man-in-the-middle attacks,
+            and the bidirectional encryption of communications between a client and server protects the communications
+            against eavesdropping and tampering. The authentication aspect of HTTPS requires a trusted third party to
+            sign server-side digital certificates.
+          </dd>
+          <dd>
+            The principal motivations for HTTPS are authentication of the accessed website, and protection of the
+            privacy and integrity of the exchanged data while in transit. It protects against man-in-the-middle attacks,
+            and the bidirectional encryption of communications between a client and server protects the communications
+            against eavesdropping and tampering. The authentication aspect of HTTPS requires a trusted third party to
+            sign server-side digital certificates.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>DT - URL</dt>
+          <dd>
+            Syntax: <code>new URL(`https://site.com:8080/path/page?p1=v1&p2=v2#hash`, `base`);</code>
+            <ul>
+              <li>url – the full URL or only path (if base is set, see below). Parts:
+                <figure>
+                  <img
+                    src="https://js.pages.nixdev.co/edu/presentations/javascript/network-request/images/network-slide-46_1.png"
+                    alt="Cheatsheet">
+                </figure>
+                <figure>
+                  <img
+                    src="https://js.pages.nixdev.co/edu/presentations/javascript/network-request/images/network-slide-46_2.png"
+                    alt="Cheatsheet">
+                </figure>
+              </li>
+              <li>base - an optional base URL: if set and url argument has only path, then the URL is generated relative
+                to base</li>
+            </ul>
+          </dd>
+          <dd>
+            URL parameters need to be encoded if they contain spaces, non-latin letters, etc
+          </dd>
+        </dl>
       </details>
 
       <details>

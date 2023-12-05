@@ -10,8 +10,8 @@ import './main.scss';
 // import variables from './modules/variables.js';
 // variables();
 
-// import datatypeof from './modules/data-typeof.js';
-// datatypeof();
+import datatypeof from './modules/data-typeof.js';
+datatypeof();
 
 // import number from './modules/dt-number.js';
 // number();
@@ -49,21 +49,6 @@ import './main.scss';
 // import oop from './modules/oop.js';
 // oop();
 
-/** Async
- * Event Loop: setTimeout(), setInterval();
- * Callbacks;
- * Promises;
- * Async/Await;
- * Microtasks & Macrotasks;
- * CORS;
- * HTTP methods;
- * AJAX;
- * XMLHttpRequest;
- * JSON;
- * Fetch API;
- * REST API;
- * Axios;
- */
 import async from './modules/async.js';
 async();
 

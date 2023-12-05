@@ -87,6 +87,22 @@ export default function datatypeof() {
   console.log(weakMap);
   console.log(typeof weakMap);
 
+  const promise = new Promise(() => {});
+  console.log(promise);
+  console.log(typeof promise);
+
+  const xhr = new XMLHttpRequest();
+  console.log(xhr);
+  console.log(typeof xhr);
+
+  const error = new Error();
+  console.log(error);
+  console.log(typeof error);
+
+  const url = new URL(`http://localhost:5173/`);
+  console.log(url);
+  console.log(typeof url);
+
   /* Primitive DTs */
 
   let primitive_1 = undefined;
