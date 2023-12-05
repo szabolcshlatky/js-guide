@@ -10,8 +10,8 @@ import './main.scss';
 // import variables from './modules/variables.js';
 // variables();
 
-import datatypeof from './modules/data-typeof.js';
-datatypeof();
+// import datatypeof from './modules/data-typeof.js';
+// datatypeof();
 
 // import number from './modules/dt-number.js';
 // number();
@@ -49,8 +49,8 @@ datatypeof();
 // import oop from './modules/oop.js';
 // oop();
 
-import async from './modules/async.js';
-async();
+// import async from './modules/async.js';
+// async();
 
 /** DOM
  * Selectors;
