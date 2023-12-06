@@ -4,6 +4,9 @@ import './main.scss';
 // import fundamentals_1 from './playground/fundamentals-1.js';
 // fundamentals_1();
 
+// import classes from './playground/class.js';
+// classes();
+
 // import output from './modules/output.js';
 // output();
 
