@@ -1,8 +1,20 @@
 `use strict`;
 
 import './main.scss';
+
+/* BASE */
+
+// import _ from 'lodash';
+// import eMap from './base/emap.js';
+// import fetchData from './base/fetchapi.js';
+// import { $, $$, $$$ } from './base/pseudoJQuery.js';
+
+/* Practice */
+
 // import fundamentals_1 from './playground/fundamentals-1.js';
 // fundamentals_1();
+
+/* Modules */
 
 // import classes from './playground/class.js';
 // classes();

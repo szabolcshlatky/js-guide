@@ -103,6 +103,14 @@ export default function datatypeof() {
   console.log(url);
   console.log(typeof url);
 
+  const htmlcollection = document.getElementsByTagName(`*`);
+  console.log(htmlcollection);
+  console.log(typeof htmlcollection);
+
+  const nodelist = document.querySelectorAll(`*`);
+  console.log(nodelist);
+  console.log(typeof nodelist);
+
   /* Primitive DTs */
 
   let primitive_1 = undefined;

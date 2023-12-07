@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 `use strict`;
 
 export default function classes() {
