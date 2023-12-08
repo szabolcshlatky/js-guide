@@ -6,6 +6,8 @@ export default function dom() {
   /* Document Object Model */
 
   console.log(document);
+  console.log(document.URL);
+  console.log(document.location);
   console.log(document.documentElement);
   console.log(document.head);
   console.log(document.body);

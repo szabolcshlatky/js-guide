@@ -11,8 +11,17 @@ import './main.scss';
 
 /* Practice */
 
-// import fundamentals_1 from './playground/fundamentals-1.js';
-// fundamentals_1();
+// import coercionPredict from './playground/sandbox/fundas-coercion-predict.js';
+// coercionPredict();
+// import countries from './playground/sandbox/fundas-countries.js';
+// countries();
+
+// import bmi from './playground/sandbox/cc-bmi.js';
+// bmi();
+// import koalas_dolphins from './playground/sandbox/cc-koalas-dolphins.js';
+// koalas_dolphins();
+import bills_tips from './playground/sandbox/cc-bills-tips.js';
+bills_tips();
 
 /* Modules */
 

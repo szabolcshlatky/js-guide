@@ -1,3 +1,5 @@
+`use strict`;
+
 /* Pseudo jQuery */
 
 export const $ = (id) => document.getElementById(id);
