@@ -20,16 +20,16 @@ import './main.scss';
 // bmi();
 // import koalas_dolphins from './playground/sandbox/cc-koalas-dolphins.js';
 // koalas_dolphins();
-import bills_tips from './playground/sandbox/cc-bills-tips.js';
-bills_tips();
-
-/* Modules */
+// import bills_tips from './playground/sandbox/cc-bills-tips.js';
+// bills_tips();
 
 // import classes from './playground/class.js';
 // classes();
 
-// import output from './modules/output.js';
-// output();
+/* Modules */
+
+// import bom from './modules/api-bom.js';
+// bom();
 
 // import variables from './modules/variables.js';
 // variables();
@@ -76,39 +76,14 @@ bills_tips();
 // import async from './modules/async.js';
 // async();
 
-/** DOM
- * Selectors;
- * Attributes;
- * Manipulation;
- * Events;
- * Event bubbling & capturing;
- * Event delegation;
- * Event propagation;
- * Event listeners;
- * Event object;
- * Event handlers;
- * Event loop;
- * Event queue;
- * Event stack;
- */
-// import dom from './modules/api-dom.js';
-// dom();
+import dom from './modules/api-dom.js';
+dom();
 
-/** BOM
- * Window object;
- * Location object;
- * Navigator object;
- * Screen object;
- * History object;
- * Cookies;
- * LocalStorage;
- * SessionStorage;
- * Web Workers;
- * Service Workers;
- * Web Sockets;
- */
-// import bom from './modules/api-bom.js';
-// bom();
+// import localstorage from './modules/api-localstorage.js';
+// localstorage();
+
+// import database from './modules/db.js';
+// database();
 
 /** TS
  * Types;

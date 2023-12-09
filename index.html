@@ -146,21 +146,32 @@
   <main id="main">
     <article>
       <details>
-        <summary>Output</summary>
+        <summary>
+          <data value="Application Programming Interface">
+            <dfn>
+              <abbr title="Application Programming Interface">API</abbr>
+            </dfn>
+          </data> -
+          <data value="Browser Object Model">
+            <dfn>
+              <abbr title="Browser Object Modell">BOM</abbr>
+            </dfn>
+          </data>
+        </summary>
         <dl>
           <dt>GLOBAL (window.) object
-        </dl>
-        <dd>
-          When we use .property or .method() on the (browser) window object we can leave the 'window.' part because its
-          the global object.
-        </dd>
-        <dt>DevTools JS areas</dt>
-        <dd>
-          Code snippets
-        </dd>
-        <dd>
-          <code>console.log(`F12`);</code>
-        </dd>
+          <dd>
+            When we use .property or .method() on the (browser) window object we can leave the 'window.' part because
+            its
+            the global object.
+          </dd>
+          <dt>DevTools JS areas</dt>
+          <dd>
+            Code snippets
+          </dd>
+          <dd>
+            <code>console.log(`F12`);</code>
+          </dd>
         </dl>
       </details>
 
@@ -1487,12 +1498,7 @@
 
       <details>
         <summary>
-          <data value="Application Programming Interface">
-            <dfn>
-              <abbr title="Application Programming Interface">API</abbr>
-            </dfn>
-          </data>
-
+          API -
           <data value="Document Object Modell">
             <dfn>
               <abbr title="Document Object Model">DOM</abbr>
@@ -1513,22 +1519,59 @@
             the forEach(); method.
           </dd>
 
+          <dt><code>forEach()</code> is the best iteration on both because...</dt>
+          <dd>
+            Array methods won’t work on them, because they are not array: but we can use Array.from to create a “real”
+            array from the collection, if we want array methods.
+          </dd>
+
           <dt>GETELEMENTSBY* querying method</dt>
           <dd>
             All methods "getElementsBy*" return a live collection. Such collections always reflect the current state of
             the document and “auto-update” when it changes.
+          </dd>
+
+
+        </dl>
+
+        <dl>
+          <dt><code>innerText</code> vs <code>textContent</code> vs <code>innerHTML</code></dt>
+          <dd><code>innerText</code> Returns (or changes (=) or appends (+=)) the element's visible text content.</dd>
+          <dd><code>textContent</code> Returns (or changes (=) or appends (+=)) the element's visible and unvisible text
+            content.</dd>
+          <dd><code>innerHTML</code> Returns (or changes (=) or appends (+=)) the element's HTML and content (best way
+            and with template literals its better than createElement()).
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Events</dt>
+          <dd>
+            addEventListener instead of on* or inline event handlers!
+          </dd>
+          <dd>Bubbling:
+            <ul>
+              <li><code>event.stopPropagation()</code> prevents the event from propagating the DOM ("bubbling up”).</li>
+              <li><code>event.stopImmediatePropagation()</code> = <code>stopPropagation()</code> + other event listeners
+                will be removed.</li>
+            </ul>
+          </dd>
+          <dd>
+            The event delegation is a useful pattern because you can listen for events on multiple elements using one
+            event handler. Making the event delegation work requires 3 steps:
+
+            <ul>
+              <li>Determine the parent of elements to watch for events.</li>
+              <li>Attach the event listener to the parent element.</li>
+              <li>Use event.target to select the target elements.</li>
+            </ul>
           </dd>
         </dl>
       </details>
 
       <details>
         <summary>
-          API
-          <data value="Browser Object Model">
-            <dfn>
-              <abbr title="Browser Object Model">BOM</abbr>
-            </dfn>
-          </data>
+          API - localStorage
         </summary>
       </details>
 
@@ -1540,16 +1583,26 @@
     </article>
 
     <aside>
+      <h2>DOM playground</h2>
       <section class="dom">
 
+        <figure class="imgBox">
+          <img class="placeholderJPG" src="/assets/images/placeholder.jpg" alt="" />
+          <figcaption>'title' added and removed by JS</figcaption>
+        </figure>
+
+        <button type="button" class="btn">Click <span class="bubble">Bubble</span> me</button>
       </section>
 
     </aside>
   </main>
 
-  <footer class="form-events">
-    <form>
-      <textarea name="name" id="" cols="30" rows="10"></textarea>
+  <footer>
+    <form class="form-events">
+      <fieldset>
+        <legend>Form events</legend>
+        <input type="checkbox" name="checkbox" id="checkbox" data-set="dataset" />
+      </fieldset>
     </form>
   </footer>
 

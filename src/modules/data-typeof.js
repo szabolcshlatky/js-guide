@@ -111,6 +111,10 @@ export default function datatypeof() {
   console.log(nodelist);
   console.log(typeof nodelist);
 
+  const event = new Event(``);
+  console.log(event);
+  console.log(typeof event);
+
   /* Primitive DTs */
 
   let primitive_1 = undefined;
