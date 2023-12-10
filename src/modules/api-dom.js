@@ -1,6 +1,6 @@
 `use strict`;
 
-import { $, $$, $$$ } from '../base/pseudoJQuery.js';
+import { $, $$, $$$ } from '../base/pseudojQuery.js';
 
 export default function dom() {
   /* Document Object Model */
@@ -49,8 +49,8 @@ export default function dom() {
   const aside = document.documentElement.lastElementChild.children[2].lastElementChild;
   console.log(aside);
 
-  const checkbox = $(`checkbox`);
-  console.log(checkbox);
+  const main = $(`main`);
+  console.log(main);
 
   const domSection = $$(`.dom`);
   console.log(domSection);
@@ -98,10 +98,6 @@ export default function dom() {
   console.log(placeholderJPG.hasAttribute(`title`));
   placeholderJPG.setAttribute(`alt`, `Attribute 'alt' overwritten with JS`);
   placeholderJPG.removeAttribute(`title`);
-
-  checkbox.checked = true;
-  console.log(checkbox.checked);
-  console.log(checkbox.dataset);
 
   /* Styles */
 
@@ -176,4 +172,47 @@ export default function dom() {
   });
 
   /* Forms & Keyboard events */
+
+  const form = $$(`.form-events`);
+  const checkbox = $(`checkbox`);
+
+  const input = $(`input`);
+  const inputPattern = /^[a-zA-Z]{6,12}$/;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('Form submitted');
+    console.log('Input value: ', input.value);
+    console.log('Checkbox checked: ', checkbox.checked);
+    form.reset();
+  });
+
+  input.addEventListener('keypress', (e) => {
+    console.log('Keypress event: ', e.key);
+    if (!inputPattern.test(input.value)) {
+      console.log('Invalid input');
+      input.style.backgroundColor = 'red';
+    } else {
+      console.log('Valid input');
+    }
+  });
+
+  input.addEventListener('keydown', (e) => {
+    console.log('Keydown event: ', e.key);
+  });
+
+  input.addEventListener('keyup', (e) => {
+    console.log('Keyup event: ', e.key);
+    if (inputPattern.test(input.value)) {
+      console.log('Valid input');
+    } else {
+      console.log('Invalid input');
+      input.style.backgroundColor = 'red';
+      input.resetInput();
+    }
+  });
+
+  checkbox.addEventListener('change', () => {
+    console.log('Checkbox state: ', checkbox.checked);
+  });
 }

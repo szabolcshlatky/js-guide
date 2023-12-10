@@ -1,0 +1,70 @@
+:root {
+  --dark-theme-text: #fff;
+  --dark-theme-link: 0.5;
+  --dark-theme-bg: #000;
+  --dark-theme-shadow: 3px 3px 5px 5px rgba(255, 255, 255, 0.5);
+  --light-theme-text: #000;
+  --light-theme-link: 0.5;
+  --light-theme-bg: #fff;
+  --light-theme-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: light) {
+  #theme-switch ~ body {
+    background-color: var(--light-theme-bg);
+    color: var(--light-theme-text);
+
+    a:hover {
+      opacity: var(--light-theme-link);
+    }
+
+    button:hover {
+      text-shadow: var(--light-theme-shadow);
+      box-shadow: var(--light-theme-shadow);
+    }
+  }
+
+  #theme-switch:checked ~ body {
+    background-color: var(--dark-theme-bg);
+    color: var(--dark-theme-text);
+
+    a:hover {
+      opacity: var(--dark-theme-link);
+    }
+
+    button:hover {
+      text-shadow: var(--dark-theme-shadow);
+      box-shadow: var(--dark-theme-shadow);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #theme-switch ~ body {
+    background-color: var(--dark-theme-bg);
+    color: var(--dark-theme-text);
+
+    a:hover {
+      opacity: var(--dark-theme-link);
+    }
+
+    button:hover {
+      text-shadow: var(--dark-theme-shadow);
+      box-shadow: var(--dark-theme-shadow);
+    }
+  }
+
+  #theme-switch:checked ~ body {
+    background-color: var(--light-theme-bg);
+    color: var(--light-text);
+
+    a:hover {
+      opacity: var(--light-theme-link);
+    }
+
+    button:hover {
+      text-shadow: var(--light-theme-shadow);
+      box-shadow: var(--light-theme-shadow);
+    }
+  }
+}

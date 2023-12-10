@@ -7,7 +7,7 @@ import './main.scss';
 // import _ from 'lodash';
 // import eMap from './base/emap.js';
 // import fetchData from './base/fetchapi.js';
-// import { $, $$, $$$ } from './base/pseudoJQuery.js';
+// import { $, $$, $$$ } from './base/pseudojQuery.js';
 
 /* Practice */
 

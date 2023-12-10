@@ -31,83 +31,6 @@
 
   <link rel="icon" href="/assets/images/favicon.ico" />
   <link rel="apple-touch-icon" href="/assets/images/favicon.ico" />
-
-  <style>
-    .logo img,
-    .©貂 img {
-      display: inline-block;
-      max-width: 100%;
-    }
-
-    .logo button,
-    .©貂 button {
-      display: inline-block;
-      min-width: 44px;
-      min-height: 44px;
-      border: none;
-      font-size: clamp(1rem, 1.25vw, 1.25rem);
-      line-height: 1.5;
-      background: none;
-      cursor: pointer;
-    }
-
-    .logo a:link,
-    .©貂 a:visited {
-      color: (internal value);
-      text-decoration: .5px dashed underline;
-      cursor: pointer;
-    }
-
-    .logo a:link:active,
-    .©貂 a:visited:active {
-      color: (internal value);
-    }
-
-    .logo {
-      position: fixed;
-      top: 1%;
-      left: 1%;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      gap: 1em;
-    }
-
-    .logo a {
-      display: inline-block;
-      transition: 0.5s;
-      opacity: 0.5;
-    }
-
-    .logo a:hover {
-      opacity: 1;
-    }
-
-    .logo button {
-      transition: 0.5s;
-      opacity: 0.5;
-    }
-
-    .logo button:hover {
-      opacity: 1;
-    }
-
-    .©貂 {
-      position: fixed;
-      bottom: 1%;
-      right: 1%;
-      z-index: 9999;
-      font-style: normal;
-      opacity: 0.5;
-      transition: 1s;
-    }
-
-    .©貂:hover {
-      opacity: 1;
-      scale: 1.2;
-      transform: rotateZ(-90deg);
-    }
-  </style>
 </head>
 
 <body>
@@ -1598,10 +1521,14 @@
   </main>
 
   <footer>
-    <form class="form-events">
+    <form class="form-events" action="index.html" method="post">
       <fieldset>
         <legend>Form events</legend>
+        <label for="input">
+          <input type="text" name="input" id="input" placeholder="Input" />
+        </label>
         <input type="checkbox" name="checkbox" id="checkbox" data-set="dataset" />
+        <input type="submit" value="Submit" class="btn" />
       </fieldset>
     </form>
   </footer>
