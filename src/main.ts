@@ -5,9 +5,19 @@ import './main.scss';
 /* BASE */
 
 // import _ from 'lodash';
-// import eMap from './base/emap.js';
-// import fetchData from './base/fetchapi.js';
-// import { $, $$, $$$ } from './base/pseudojQuery.js';
+// import eMap from './lib/emap.js';
+// import FetchApi from './lib/fetchapi.js';
+import { $, $$, $$$ } from './lib/pseudojQuery.js';
+import * as policyDialog from './lib/policyDialog.js';
+
+import showClickPosition from './lib/rippleBtn.js';
+
+$$$('.btn').forEach(button => {
+  button.addEventListener('click', showClickPosition);
+});
+
+policyDialog.showPolicy();
+policyDialog.hidePolicy();
 
 /* Practice */
 
@@ -76,14 +86,11 @@ import './main.scss';
 // import async from './modules/async.js';
 // async();
 
-import dom from './modules/api-dom.js';
-dom();
+// import dom from './modules/api-dom.js';
+// dom();
 
 // import localstorage from './modules/api-localstorage.js';
 // localstorage();
-
-// import database from './modules/db.js';
-// database();
 
 /** TS
  * Types;

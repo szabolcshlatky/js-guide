@@ -1,6 +1,8 @@
-@use 'base/reset' as *;
-@use 'base/logo' as *;
-@use 'base/theme' as *;
+@use 'indexStyles/mediaQueries' as *;
+@use 'indexStyles/reset' as *;
+@use 'indexStyles/globals' as *;
+@use 'indexStyles/buttons' as *;
+@use 'indexStyles/brand' as *;
 
 #index {
   body {
