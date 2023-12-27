@@ -33,6 +33,11 @@
     "noFallthroughCasesInSwitch": false
   },
   "include": [
-    "src"
+    "src",
+    // "dist/scripts/bundle.js"
+  ],
+  "exclude": [
+    "node_modules"
   ]
+  // "references": [{ "path": "./tsconfig.node.json" }]
 }
